@@ -2,19 +2,19 @@
   
   <div class="container">
     <div class="someText">
-      <h3>Frequently Asked Questions?</h3>
+      <h3 class=" fw-semibold">Frequently Asked Questions?</h3>
       <p>
         Find answers to common questions that come in your mind related to IPO.
       </p>
     </div>
     <div class="accordion" id="accordionExample">
       <div
-        class="accordion-item fw-bold mb-3"
+        class="accordion-item fw-bold mb-3 shadow-none"
         *ngFor="let faq of faqs; let i = index"
       >
-        <h2 class="accordion-header" id="heading{{ i }}">
+        <h2 class="accordion-header shadow-none " id="heading{{ i }}">
           <button
-            class="accordion-button fw-bold"
+            class="accordion-button fw-bold shadow-none"
             type="button"
             data-bs-toggle="collapse"
             [attr.data-bs-target]="'#collapse' + i"

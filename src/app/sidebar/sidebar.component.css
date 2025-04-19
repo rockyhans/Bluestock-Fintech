@@ -1,0 +1,48 @@
+h3 {
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  background-color: #f8f9fa;
+}
+.nav-link {
+  color: #333;
+  transition: 0.2s;
+}
+.nav-link:hover {
+  background-color: #e9ecef;
+  border-radius: 6px;
+}
+.nav-link.active {
+  background-color: #e7f1ff;
+  border-left: 3px solid #0d6efd;
+}
+
+.headerDiv {
+  width: 20%;
+}
+
+.userLogo {
+  background-color: #ffe6cc;
+  width: 40px;
+  height: 40px;
+}
+
+.menuBar {
+  width: 20%;
+}
+
+.normal{
+  width: 80%;
+}

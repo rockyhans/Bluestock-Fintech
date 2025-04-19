@@ -1,3 +1,8 @@
 .mainPage small{
     font-weight: 500;
 }
+
+.models{
+    border: none;
+    border-top-right-radius: 5px;
+}

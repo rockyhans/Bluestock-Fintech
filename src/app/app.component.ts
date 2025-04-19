@@ -4,6 +4,7 @@ import { MyComponentComponent } from './my-component/my-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { QuesitionComponent } from './quesition/quesition.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,7 @@ import { QuesitionComponent } from './quesition/quesition.component';
 })
 export class AppComponent {
   title = 'IPO WEB APP';
+
+  selectedComponent: string = 'dashboard';
+
 }

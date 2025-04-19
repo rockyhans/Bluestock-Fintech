@@ -1,0 +1,270 @@
+<!-- IPO Form Section -->
+<div class="overflow-auto mainBar p-4">
+  <div class="overflow-auto">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center mt-2">
+        <div>
+          <h3>Upcomming IPO Information</h3>
+          <p class="fw-semibold mt-4">Manage your IPO Details</p>
+        </div>
+        <div>
+          <button class="btn btn-primary me-2" (click)="register()">
+            Register
+          </button>
+          <button class="btn btn-outline-primary border-2" (click)="cancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-4 h-100">
+        <div class="col-md-3 border-end border-2 p-2">
+          <div class="list-group mb-4 fw-semibold">
+            <button
+              class=" nav-link list-group-item list-group-item-action fw-semibold border border-0 p-3"
+              [ngClass]="{
+                'active text-primary': selected === 'info',
+                'text-dark': selected !== 'info'
+              }"
+              (click)="select('info')"
+            >
+              <i class="bi bi-info-circle me-2"></i>
+              IPO Information
+            </button>
+
+            <button
+              class=" nav-link list-group-item list-group-item-action fw-semibold border border-0 p-3"
+              [ngClass]="{
+                'active text-primary': selected === 'journal',
+                'text-dark': selected !== 'journal'
+              }"
+              (click)="select('journal')"
+            >
+              <i class="bi bi-journal-text me-2"></i>
+              IPO Info
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-9 overflow-auto ps-5 h-100">
+          <div class="card border-0 p-2 shadow-none">
+            <div class="border-bottom border-2 text-left ps-4">
+              <h4 class="mb-3 fw-bold text-dark">IPO Information</h4>
+              <p>Enter IPO Details</p>
+            </div>
+
+            <div class="mb-3">
+              <h5 class="mt-4">Company Logo</h5>
+              <div
+                class="d-flex justify-content-center align-items-center gap-2 mt-4 p-2"
+              >
+                <img
+                  alt="dje"
+                  *ngIf="ipoDetails.companyLogo"
+                  [src]="ipoDetails.companyLogo"
+                  class="img-thumbnail border-0 rounded-circle companyLogoImage"
+                />
+                <p *ngIf="!ipoDetails.companyLogo" class="text-muted"></p>
+
+                <input
+                  type="file"
+                  #fileInput
+                  (change)="uploadLogo($event)"
+                  hidden
+                />
+                <button
+                  class="btn btn-primary logoUploadButton"
+                  (click)="fileInput.click()"
+                >
+                  Upload Logo
+                </button>
+
+                <button
+                  class="btn border border-primary btn-outline-primary fw-semibold border-2 btn-sm logoUploadButton"
+                  (click)="deleteLogo()"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Company Name</label>
+                <input
+                  title="kjds"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.companyName"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Price Band</label>
+                <input
+                  title="jscd"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.priceBand"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Open</label>
+                <input
+                  title="jhkwe"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.openDate"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Close</label>
+                <input
+                  title="wkqjd"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.closeDate"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Issue Size</label>
+                <input
+                  title="wkj"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.issueSize"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Issue Type</label>
+                <select
+                  title="dasjk"
+                  class="form-select p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.issueType"
+                >
+                  <option value="">Select Type</option>
+                  <option value="Fresh Issue">Fresh Issue</option>
+                  <option value="Offer for Sale">Offer for Sale</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Listing Date</label>
+                <input
+                  title="lhe"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.listingDate"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Status</label>
+                <select
+                  title="jjsho"
+                  class="form-select p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.status"
+                >
+                  <option value="">Select Status</option>
+                  <option value="Open">Open</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Upcoming">Upcoming</option>
+                </select>
+              </div>
+            </div>
+
+            <h5 class="mt-4 fw-semibold ms-2 text-dark">
+              New Listed IPO Details (When IPO Gets Listed)
+            </h5>
+
+            <div class="row g-3 mt-1">
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>IPO Price</label>
+                <input
+                  title="bjask"
+                  type="number"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.ipoPrice"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Listing Price</label>
+                <input
+                  title="slk"
+                  type="number"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.listingPrice"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Listing Gain</label>
+                <input
+                  title="aslbcd"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.listingGain"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Listing Date</label>
+                <input
+                  title="abskjc"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.newListingDate"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>CMP</label>
+                <input
+                  title="ask"
+                  type="number"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.cmp"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>Current Return</label>
+                <input
+                  title="lschi"
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.currentReturn"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>RHP</label>
+                <input
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.rhpLink"
+                  placeholder="Enter RHP PDF Link"
+                />
+              </div>
+
+              <div class="col-md-6 d-flex flex-column gap-2">
+                <label>DRHP</label>
+                <input
+                  type="text"
+                  class="form-control p-3 bg-white shadow-none border-2"
+                  [(ngModel)]="ipoDetails.drhpLink"
+                  placeholder="Enter DRHP PDF Link"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

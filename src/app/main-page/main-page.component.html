@@ -1,18 +1,20 @@
 <div class="container my-4 mainPage pb-5">
   <div class="row g-4">
-    <div class="col-md-4" *ngFor="let ipo of ipoList"> 
+    <div class="col-md-4" *ngFor="let ipo of ipoList">
+ 
       <div class="card p-4 shadow-sm rounded-2 border-0">
+        <div class="position-absolute top-0 end-0 bg-success  p-1 fw-bold models">Models</div>
         <div class="d-flex align-items-center mb-3">
           <img
             [src]="ipo.logo"
             alt="Logo"
             class="me-3"
-            width="40"
-            height="40"
+            width="100"
+            height="100"
           />
-          <h4 class="mb-0 fw-bold text-primary ms-5">{{ ipo.company }}</h4>
+          <h4 class="mb-0 fw-bold text-primary">{{ ipo.company }}</h4>
         </div>
-        <div class="row mb-2 mt-4">
+        <div class="row mb-2 mt-2">
           <div class="col-4">
             <small class="text-muted">PRICE BAND</small><br /><strong>{{
               ipo.priceBand

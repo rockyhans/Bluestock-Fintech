@@ -1,0 +1,133 @@
+<div class="d-flex border-bottom border-2">
+  <div
+    class="d-flex justify-content-evenly align-items-center text-left bg-light headerDiv"
+  >
+    <div class="d-flex gap-2">
+      <h5
+        class="text-primary fw-bold d-flex justify-content-evenly align-items-center text-left"
+      >
+        Bluestock Fintech
+      </h5>
+    </div>
+  </div>
+  <div
+    class="d-flex justify-content-between align-items-center flex-grow-1 p-3"
+  >
+    <div class="input-group w-50 shadow-0 p-1 ms-4">
+      <input
+        type="text"
+        class="form-control shadow-none border-0 p-2"
+        placeholder="Search"
+      />
+      <button
+        title="lkcjh"
+        class="btn btn-outline-secondary shadow-0 border-0 bg-light"
+        type="button"
+      >
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <div class="d-flex align-items-center gap-3 position-absolute end-0 me-5">
+      <div class="d-flex align-items-center gap-2">
+        <div
+          class="rounded-circle text-white fw-bold d-flex align-items-center justify-content-center userLogo"
+        >
+          X
+        </div>
+        <span class="fw-semibold">User</span>
+        <i class="bi bi-chevron-down ms-3"></i>
+      </div>
+
+      <div class="position-relative ms-3">
+        <i class="bi bi-bell fs-5 text-secondary"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex min-vh-100">
+  <!-- Sidebar -->
+  <div class="menuBar p-4 bg-light">
+    <div class="small text-uppercase text-muted mb-2 fw-semibold">Menu</div>
+    <ul class="nav flex-column gap-2 mt-3 fw-semibold">
+      <li class="nav-item">
+        <button
+          class="nav-link fw-semibold p-3 border-0 w-100 text-start"
+          [ngClass]="{
+            'active text-primary': selectedComponent === 'dashboard',
+            'bg-transparent text-muted': selectedComponent !== 'dashboard'
+          }"
+          (click)="selectedComponent = 'dashboard'"
+        >
+          <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        </button>
+      </li>
+
+      <li class="nav-item">
+        <button
+          class="nav-link fw-semibold p-3 border-0 w-100 text-start"
+          [ngClass]="{
+            'active text-primary': selectedComponent === 'ipoInfo',
+            'bg-transparent text-muted': selectedComponent !== 'ipoInfo'
+          }"
+          (click)="selectedComponent = 'ipoInfo'"
+        >
+          <i class="bi bi-speedometer2 me-2"></i>Manage IPO
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link fw-semibold p-3 border-0 w-100 text-start"
+          [ngClass]="{
+            'active text-primary': selectedComponent === 'vv',
+            'bg-transparent text-muted': selectedComponent !== 'vhg'
+          }"
+          (click)="selectedComponent = 'cv'"
+        >
+          <i class="bi bi-speedometer2 me-2"></i>IPO Subscription
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link fw-semibold p-3 border-0 w-100 text-start"
+          [ngClass]="{
+            'active text-primary': selectedComponent === 'ggh',
+            'bg-transparent text-muted': selectedComponent !== 'vhj'
+          }"
+          (click)="selectedComponent = 'ghgh'"
+        >
+          <i class="bi bi-speedometer2 me-2"></i>IPO Allotment
+        </button>
+      </li>
+    </ul>
+
+    <div class="small text-uppercase text-muted mb-2 fw-semibold mt-3">
+      Others
+    </div>
+    <ul class="nav flex-column gap-2 mt-3 fw-semibold">
+      <li class="nav-item">
+        <a class="nav-link text-muted p-3" href="#"
+          ><i class="bi bi-gear me-2"></i>Settings</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-muted p-3" href="#"
+          ><i class="bi bi-code-slash me-2"></i>API Manager</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-muted p-3" href="#"
+          ><i class="bi bi-person me-2"></i>Accounts</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-muted p-3" href="#"
+          ><i class="bi bi-question-circle me-2"></i>Help</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <app-dashboard class="normal" *ngIf="selectedComponent === 'dashboard'"></app-dashboard>
+  <app-ipo-info class="normal" *ngIf="selectedComponent === 'ipoInfo'"></app-ipo-info>
+</div>
