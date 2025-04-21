@@ -1,0 +1,240 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-12 col-md-3 bg-white mb-3 mb-md-0">
+        <ul class="list-group border-0">
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-pie-chart-fill"></i>
+            <p class="ms-3">Active Clients</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-usb-drive-fill"></i>
+            <p class="ms-3">Charges</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-cursor-fill"></i>
+            <p class="ms-3">Complaints</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-cash-coin"></i>
+            <p class="ms-3">Share Holding</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-arrow-down-up"></i>
+            <p class="ms-3">Pros & Cons</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-percent"></i>
+            <p class="ms-3">Ratings</p>
+          </li>
+          <li
+            class="list-group-item d-flex border-0 text-primary fw-semibold fs-5"
+          >
+            <i class="bi bi-file-earmark-bar-graph"></i>
+            <p class="ms-3">Financials</p>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Cards -->
+      <section
+        class="col-12 col-md-9 d-flex gap-4 align-items-center justify-content-evenly"
+      >
+        <h1
+          class="position-absolute rounded-circle text-white bg-dark d-flex border-0 shadow align-items-center justify-content-evenly fs-4"
+          style="height: 50px; width: 50px"
+        >
+          vs
+        </h1>
+        <div
+          class="card d-flex border-0 shadow align-items-center justify-content-evenly"
+          *ngFor="let broker of brokers"
+        >
+          <img
+            [src]="broker.logo"
+            class="card-img-top"
+            alt="{{ broker.name }}"
+          />
+          <h5 class="card-title fw-bold">{{ broker.name }}</h5>
+          <span class="text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </span>
+          <h2 class="ms-1 text-dark fw-bold">{{ broker.rating }}</h2>
+
+          <div class="card-body text-center d-flex flex-column">
+            <a [href]="broker.accountLink" target="_blank">
+              <button class="btn btn-success dematBtn fw-semibold">
+                Open Demat Account
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <main class="content mt-4 text-dark fw-semibold">
+    <h4 class="fw-bold mb-4">Active Clients</h4>
+    <canvas
+      baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="'line'"
+    >
+    </canvas>
+
+    <div class="container my-5">
+      <h4 class="fw-bold mb-4">Account Opening and Maintenance Charges</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-primary p-1 bg-primary border-2 border-primary">
+            <tr class="border-primary">
+              <th class="p-3 bg-primary text-left text-white border-0">
+                Charges
+              </th>
+              <th class="p-3 bg-primary text-left text-white">Angel One</th>
+              <th class="p-3 bg-primary text-left text-white">Zerodha</th>
+            </tr>
+          </thead>
+          <tbody class="border-2 border-dark">
+            <tr class="border-2 border-dark border-top-0">
+              <td class="p-4">Account Opening Charges</td>
+              <td class="border-2 border-dark border-top-0">₹0</td>
+              <td>₹200</td>
+            </tr>
+            <tr>
+              <td class="p-4">Account Maintenance Charges</td>
+              <td class="border-2 border-dark border-top-0">
+                ₹0 for the first year<br />
+                ₹23.6 / Month after
+              </td>
+              <td>₹300 per year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h4 class="fw-bold mb-4">Account Opening and Maintenance Charges</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-primary p-1 bg-primary border-2 border-primary">
+            <tr class="border-primary">
+              <th class="p-3 bg-primary text-left text-white border-0">
+                Brokerage Charges
+              </th>
+              <th class="p-3 bg-primary text-left text-white">Angel One</th>
+              <th class="p-3 bg-primary text-left text-white">Zerodha</th>
+            </tr>
+          </thead>
+          <tbody class="border-2 border-dark">
+            <tr class="border-2 border-dark border-top-0">
+              <td class="p-4">Intraday</td>
+              <td class="border-2 border-dark border-top-0">
+                ₹ 20 or 0.25% (Whichever is lower)
+              </td>
+              <td>₹ 20 or 0.03% / executed order Whichever is lower</td>
+            </tr>
+            <tr>
+              <td class="p-4">Futures</td>
+              <td class="border-2 border-dark border-top-0">
+                ₹ 20 or 0.25% (Whichever is lower)
+              </td>
+              <td>₹ 20 or 0.03% / executed order whichever is lower</td>
+            </tr>
+            <tr>
+              <td class="p-4">Options</td>
+              <td class="border-2 border-dark border-top-0">
+                ₹ 20 or 0.25% (Whichever is lower)
+              </td>
+              <td>₹ 20 per executed order (on Turnover)</td>
+            </tr>
+            <tr>
+              <td class="p-4">Delivery</td>
+              <td class="border-2 border-dark border-top-0">Zero</td>
+              <td>Zero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="brokerCharges mb-5">
+      <img alt="scnkdbj" src="../../assets/image.png"  />
+     </div>
+
+    <h4 class="fw-bold mb-4">Yearly Revenue</h4>
+
+    <canvas
+      baseChart
+      [data]="revenueChartData"
+      [options]="revenueChartOptions"
+      [type]="'line'"
+    >
+    </canvas>
+
+    <h4  class="fw-bold mb-4 mt-5">Complaints </h4>
+    <canvas
+      baseChart
+      [data]="complaintsChartData"
+      [options]="complaintsChartOptions"
+      [type]="'line'"
+    >
+    </canvas>
+
+    <h4 class="fw-bold mb-4 mt-5">Share Holding</h4>
+    <canvas
+      baseChart
+      [data]="angelOneShareHoldingData"
+      [options]="shareHoldingOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+
+    <canvas
+    class="mt-4"
+      baseChart
+      [data]="zerodhaShareHoldingData"
+      [options]="shareHoldingOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+
+
+    <div class="brokerCharges mb-4 mt-5">
+      <img alt="scnkdbj" src="../../assets/fine1.jpg"  />
+     </div>
+
+
+    <h2>Financials</h2>
+    <canvas
+      baseChart
+      [data]="revenueProfitOverYearsData"
+      [options]="revenueProfitChartOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+  </main>
+
+  <br>
+</div>
