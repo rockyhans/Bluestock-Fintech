@@ -1,51 +1,91 @@
 <div class="container py-5">
-    <h2 class="fw-bold mb-4">
-      <span class="text-primary">Made</span> <span class="text-success">toTrade</span>
-    </h2>
-  
-    <div
-      class="card mb-4 p-4"
-      *ngFor="let broker of brokerList"
-      [ngStyle]="{ 'background-color': broker.bgColor, 'border-radius': '20px' }"
-    >
-      <div class="row align-items-center">
-        <div class="col-md-8">
-          <h4 class="fw-bold">{{ broker.name }}</h4>
-          <div class="text-warning fs-5">★ ★ ★ ★ ☆</div>
-  
-          <div class="my-2">
-            <span class="me-3"><i class="bi bi-emoji-smile"></i> {{ broker.reviews }}</span>
-            <span><i class="bi bi-people"></i> {{ broker.accounts }}</span>
-          </div>
-  
-          <p class="fw-semibold">{{ broker.offer }}</p>
-  
-          <div class="mb-3">
-            <button class="btn btn-dark btn-sm me-2">Open A/c ✈️</button>
-            <button class="btn btn-outline-dark btn-sm">Learn More</button>
-          </div>
-  
-          <ul class="list-unstyled mb-0">
-            <li *ngFor="let feature of broker.features">✅ {{ feature }}</li>
-          </ul>
+  <h1 class="fw-bold mb-4 text-center text-md-start">
+    <span class="text-primary">Made to </span>
+    <span class="text-success">Trade</span>
+  </h1>
+
+  <div
+    class="card mt-5 border-0 p-3"
+    *ngFor="let broker of brokerList"
+    [ngStyle]="{ 'background-color': broker.bgColor, 'border-radius': '20px' }"
+  >
+    <div class="row align-items-center">
+      <!-- Broker Info -->
+      <div class="col-12 col-md-4 ps-5">
+        <h4 class="fw-bold text-dark">{{ broker.name }}</h4>
+        <div class="text-warning fw-bolder fs-5">★ ★ ★ ★ ☆</div>
+
+        <div class="my-2 d-flex gap-3 flex-wrap text-dark fw-bold">
+          <span class="me-3"
+            ><i class="bi bi-chat-dots-fill"></i> {{ broker.reviews }}
+            <p>Reviews</p></span
+          >
+          <span
+            ><i class="bi bi-people-fill"></i> {{ broker.accounts }}
+            <p>Accounts</p></span
+          >
         </div>
-  
-        <div class="col-md-4 text-center">
-          <img
-          alt="msxbd"
-            [src]="broker.logo"
-            [alt]="broker.name"
-            class="img-fluid mb-2"
-            style="height: 100px"
-          />
-          <ul class="list-unstyled">
-            <li><strong>A/c Opening Charge</strong>: {{ broker.charges.opening }}</li>
-            <li><strong>Maintenance Charge</strong>: {{ broker.charges.maintenance }}</li>
-            <li><strong>Delivery Brokerage</strong>: {{ broker.charges.delivery }}</li>
-            <li><strong>Intraday Brokerage</strong>: {{ broker.charges.intraday }}</li>
-          </ul>
+
+        <p class="fw-bold">{{ broker.offer }}</p>
+
+        <div class="mb-3">
+          <button class="btn btn-sm me-2 bg-white border-0 fw-semibold">
+            Open A/c <i class="bi bi-send-fill ms-2"></i>
+          </button>
+          <button class="btn btn-sm bg-white border-0 fw-semibold">
+            Learn More
+          </button>
         </div>
+      </div>
+
+      <!-- Features List -->
+      <div class="col-6 col-md-2">
+        <ul class="list-unstyled text-dark fw-semibold">
+          <li *ngFor="let feature of broker.features" class="mb-4">
+            ✅ {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Charges -->
+      <div class="col-6 col-md-3">
+        <ul class="list-unstyled text-dark fw-semibold">
+          <li class="mb-3">
+            <div class="small">A/c Opening Charge</div>
+            <div>{{ broker.charges.opening }}</div>
+          </li>
+          <li class="mb-2">
+            <div class="small">Maintenance Charge</div>
+            <div>
+              {{ broker.charges.maintenance }}
+              <i class="bi bi-info-circle-fill ms-1"></i>
+            </div>
+          </li>
+          <li class="mb-2">
+            <div class="small">Delivery Brokerage</div>
+            <div>
+              {{ broker.charges.delivery }}
+              <i class="bi bi-info-circle-fill ms-1"></i>
+            </div>
+          </li>
+          <li>
+            <div class="small">Intraday Brokerage</div>
+            <div>
+              {{ broker.charges.intraday }}
+              <i class="bi bi-info-circle-fill ms-1"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3 text-center">
+        <img
+          title="asbckjd"
+          [src]="broker.logo"
+          [alt]="broker.name"
+          class="img-fluid"
+          style="max-height: 150px"
+        />
       </div>
     </div>
   </div>
-  
+</div>

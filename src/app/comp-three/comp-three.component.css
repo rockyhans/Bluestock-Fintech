@@ -1,10 +1,10 @@
-.text-center {
-    margin-top: 10%;
-  }
-  
-  h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    color: #dc3545;
-  }
-  
+@media (max-width: 768px) {
+
+img{
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+}

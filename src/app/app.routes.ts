@@ -11,19 +11,21 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CompThreeComponent } from './comp-three/comp-three.component';
 import { BrokerCompareComponent } from './broker-compare/broker-compare.component';
+import { SharkInvestorsComponent } from './shark-investors/shark-investors.component';
 
 export const routes: Route[] = [
-  { path: '', component: HomeComponent },
-  { path: 'component', component: MyComponentComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'forgetpassword', component: ForgetPasswordComponent },
+  { path: 'Upcoming IPO - View All', component: HomeComponent },
+  { path: 'IPO Upcoming Screen', component: MyComponentComponent },
+  { path: 'Sign In', component: SigninComponent },
+  { path: 'Sign Up', component: SignupComponent },
+  { path: 'Forget Password', component: ForgetPasswordComponent },
   { path: 'ipoInfo', component: IpoInfoComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'ipoPageInfo', component: SidebarComponent },
+  { path: 'Ragister IPO Details And Dasboard', component: SidebarComponent },
   { path: 'PageNotFound', component: NotFoundComponent },
-  { path: 'componentThree', component: CompThreeComponent },
-  { path: 'brokerComparePage', component: BrokerCompareComponent },
+  { path: 'All Broker', component: CompThreeComponent },
+  { path: 'Broker Compare - Web', component: BrokerCompareComponent },
+  { path: 'Shark Investors', component: SharkInvestorsComponent },
 
   { path: 'yyyy', component: BrokerComparisonComponent },
 

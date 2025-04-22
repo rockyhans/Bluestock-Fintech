@@ -1,0 +1,66 @@
+<div class="container py-4 bg-light">
+  <div class="d-flex">
+    <div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent px-0">
+          <li class="breadcrumb-item fw-semibold">
+            <a href="#" class="text-decoration-none">Home</a>
+          </li>
+          <li class="breadcrumb-item active fw-semibold" aria-current="page">
+            Shark Investor
+          </li>
+        </ol>
+      </nav>
+
+      <h2 class="fw-bold">Shark Investors</h2>
+      <p class="text-muted fw-semibold">
+        Look into the portfolio of these Super Investors to find out their
+        favourite stocks.
+      </p>
+    </div>
+    <!-- <div class="d-flex flex-colomn position-absolute flex-1 end-0 ">
+      <label>Search by Name </label>
+      <input
+        type="text"
+        class="form-control bg-light border-2 shadow-none"
+        placeholder="eg: Damani"
+      />
+    </div> -->
+  </div>
+
+  <!-- <div class="d-flex justify-content-end mb-3">
+    <input
+      type="text"
+      class="form-control w-50 w-md-25 p-3 bg-light border-2 shadow-none"
+      placeholder="eg: Damani"
+    />
+  </div> -->
+
+  <div class="row mt-5">
+    <div
+      class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+      *ngFor="let investor of investors"
+    >
+      <div class="card h-100 text-center p-4 shadow light-blue-shadow border-0 rounded-4" >
+        <img
+          [src]="investor.image"
+          alt="{{ investor.name }}"
+          class="card-img-top object-fit-cover"
+          style="height: 250px"
+        />
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ investor.name }}</h5>
+          <p class="card-text text-muted fw-semibold">
+            He starting investment in the 90's<br />
+            His investment st...
+          </p>
+          <Button class="rounded-4 btn-primary bg-primary border-0 p-2 px-3">
+            <a href="#" class="text-decoration-none text-white fw-semibold"
+              >View Holdings</a
+            ></Button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -32,3 +32,16 @@ input[type="checkbox"]:focus {
 .smokeBg{
   background-color: whitesmoke;
 }
+
+
+img {
+  height: 35px;
+}
+
+
+@media (max-width: 576px) {
+  img {
+    height: 30px;
+  }
+}
+ 

@@ -2,11 +2,16 @@
   class="container d-flex align-items-center justify-content-center min-vh-100"
 >
   <div class="p-4 divImpo">
-    <div class="text-center mb-4">
-      <img src="assets/logo.png" alt="Bluestock Logo" height="40" />
-    </div>
+    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+      <img src="../../assets/logo.png" alt="logo" class="logoImg" />
+      <h1 class="pt-2 fw-bold">BLUESTOCK</h1>
+    </a>
 
-    <form (ngSubmit)="onLogin()" [formGroup]="loginForm" class="d-flex flex-column align-items-center justify-content-center">
+    <form
+      (ngSubmit)="onLogin()"
+      [formGroup]="loginForm"
+      class="d-flex flex-column align-items-center justify-content-center"
+    >
       <div class="mb-3 w-100">
         <label for="email" class="form-label boldImp">Email Address</label>
         <input
@@ -20,7 +25,9 @@
 
       <div class="mb-0 d-flex justify-content-between align-items-center w-100">
         <label for="password" class="form-label boldImp">Password</label>
-        <a href="/forgetpassword" class="small text-decoration-none fw-semibold">Forgot Password?</a>
+        <a href="/forgetpassword" class="small text-decoration-none fw-semibold"
+          >Forgot Password?</a
+        >
       </div>
       <div class="d-flex border mb-3 rounded-2 w-100">
         <input
@@ -31,7 +38,7 @@
         />
         <button
           type="button"
-          class="btn  border-0 "
+          class="btn border-0"
           (click)="showPassword = !showPassword"
           title="xyz"
         >
@@ -42,16 +49,18 @@
         </button>
       </div>
 
-      <div class="p-3 mb-3 border border-2 border-dark rounded-4 checkboxDiv w-100">
+      <div
+        class="p-3 mb-3 border border-2 border-dark rounded-4 checkboxDiv w-100"
+      >
         <input
           type="checkbox"
           class="form-check-input shadow-none"
           id="robotCheck"
           formControlName="isRobot"
         />
-        <label class="form-check-label ms-2" for="robotCheck">I'm not a robot</label>
-
-        
+        <label class="form-check-label ms-2" for="robotCheck"
+          >I'm not a robot</label
+        >
       </div>
 
       <div class="form-check mb-3 checkboxDiv w-100">
@@ -68,7 +77,9 @@
 
       <button type="submit" class="btn btn-primary w-100">Login</button>
 
-      <div class="text-center d-inline-block my-3 text-muted smokeBg p-2 " >or sign in with</div>
+      <div class="text-center d-inline-block my-3 text-muted smokeBg p-2">
+        or sign in with
+      </div>
 
       <button type="button" class="btn btn-light border w-100 mb-2">
         <img
@@ -80,7 +91,9 @@
       </button>
 
       <div class="text-center mt-3">
-        <a href="/signup" class="text-decoration-none fw-bold">Create an account</a>
+        <a href="/signup" class="text-decoration-none fw-bold"
+          >Create an account</a
+        >
       </div>
     </form>
   </div>
