@@ -1,0 +1,118 @@
+.textColor {
+  color: rgb(130, 2, 249);
+}
+
+.thumbImage {
+  height: 70px;
+}
+
+.chartAnalysis{
+    height: 400px;
+}
+
+
+.sharkInvestors{
+    height: 300px;
+}
+
+.smallPhoto{
+  width: 500px;
+  height: 500px;
+}
+
+.splImage{
+  width: 60px;
+}
+
+
+.imppho{
+  height: 500px;
+}
+
+
+
+@media (max-width: 500px) {
+  .smallText {
+    font-size: 10px;
+  }
+  
+.sharkInvestors{
+    height: 200px;
+}
+
+.splH2{
+    font-size: 20px;
+}
+
+.smallPhoto{
+  width: 300px;
+  height: 400px;
+}
+
+.splImage{
+  width: 20px;
+}
+
+.Imp{
+  gap: 0px;
+}
+
+}
+
+
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+  .text-muted {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+/* Ensure the hero section container positions its content relative to the image */
+.hero-section {
+  position: relative;
+}
+
+/* Overlay container centered on the image */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* On smaller screens, keep some padding for legibility */
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 576px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn img {
+    width: 130px;
+  }
+
+  .imppho{
+    height: 300px;
+  }
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+

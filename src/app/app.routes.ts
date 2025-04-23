@@ -12,8 +12,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CompThreeComponent } from './comp-three/comp-three.component';
 import { BrokerCompareComponent } from './broker-compare/broker-compare.component';
 import { SharkInvestorsComponent } from './shark-investors/shark-investors.component';
+import { AppHomePageComponent } from './app-home-page/app-home-page.component';
 
 export const routes: Route[] = [
+  { path: '', component: AppHomePageComponent },
   { path: 'Upcoming IPO - View All', component: HomeComponent },
   { path: 'IPO Upcoming Screen', component: MyComponentComponent },
   { path: 'Sign In', component: SigninComponent },
