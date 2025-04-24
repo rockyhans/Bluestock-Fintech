@@ -1,6 +1,13 @@
 <div
   class="container d-flex align-items-center justify-content-center min-vh-100"
 >
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-danger text-center position-fixed top-0 mt-2"
+  >
+    {{ errorMessage }}
+  </div>
+
   <div class="p-4 divImpo">
     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
       <img src="../../assets/logo.png" alt="logo" class="logoImg" />
@@ -8,8 +15,8 @@
     </a>
 
     <form
-      (ngSubmit)="onLogin()"
-      [formGroup]="loginForm"
+      (ngSubmit)="onSignup()"
+      [formGroup]="signupForm"
       class="d-flex flex-column align-items-center justify-content-center"
     >
       <strong class="mb-3">Create an account</strong>

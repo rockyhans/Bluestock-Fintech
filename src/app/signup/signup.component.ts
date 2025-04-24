@@ -6,36 +6,51 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css',
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
-  loginForm: FormGroup;
-  showPassword: boolean = false;
-  isRobot: boolean = false;
-  keepSignedIn: boolean = false;
 
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
+  errorMessage: string = '';
+
+  signupForm: FormGroup;
+  showPassword = false;
+
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.signupForm = this.fb.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      name: ['', Validators.required],
       isRobot: [false, Validators.requiredTrue],
       keepSignedIn: [false],
     });
   }
 
-  onLogin() {
-    if (this.loginForm.valid && this.isRobot) {
-      console.log('Form Submitted', this.loginForm.value);
+  onSignup() {
+    if (this.signupForm.valid) {
+      const { name, email, password } = this.signupForm.value;
+      const user = { username: name, email, password };
+  
+      this.authService.signup(user).subscribe({
+        next: (res) => {
+          console.log('Signup successful:', res);
+          this.errorMessage = ''; // clear error if successful
+        },
+        error: (err) => {
+          console.error('Signup error:', err);
+          this.errorMessage = err.error?.message || 'Something went wrong!';
+        },
+      });
     } else {
-      console.warn('Form not valid or robot not checked');
+      this.errorMessage = 'Please fill out the form correctly.';
+      this.signupForm.markAllAsTouched();
     }
   }
+  
 }

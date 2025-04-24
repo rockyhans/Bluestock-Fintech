@@ -1,16 +1,21 @@
-<nav class="navbar navbar-expand-lg bg-white shadow-sm px-2 p-0 ">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm px-2 p-0">
   <div class="container-fluid">
-    <a
-      class="navbar-brand d-flex align-items-center justify-content-evenly"
-      href="#"
-    >
-      <img src="../../assets/logo.png" alt="logo" class="logoImg" />
-      <h1 class="pt-2 ms-3 fw-bold">BLUESTOCK</h1>
-    </a>
+    <!-- Logo Div -->
+    <div>
+      <a
+        class="navbar-brand d-flex align-items-center justify-content-evenly"
+        href="/"
+      >
+        <img src="../../assets/logo.png" alt="logo" class="logoImg" />
+        <h1 class="pt-2 ms-3 fw-bold">BLUESTOCK</h1>
+      </a>
+    </div>
+
+    <!-- Grid Button -->
     <button
       class="navbar-toggler border-0"
       type="button"
-      data-bs-toggle="collapse" 
+      data-bs-toggle="collapse"
       data-bs-target="#navbarContent"
       aria-controls="navbarContent"
       aria-expanded="false"
@@ -18,24 +23,23 @@
     >
       <i class="bi bi-grid-3x3-gap-fill"></i>
     </button>
-    <div
-      class="collapse navbar-collapse justify-content-between"
-      id="navbarContent"
-    >
+
+    <!-- Nav Buttons -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Left Side Buttons -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link text-muted fw-semibold aLink" href="/">PRODUCTS</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link text-muted fw-semibold aLink" href="#"
+          <a class="nav-link text-muted fw-semibold aLink" href="/"
             >COMMUNITY</a
           >
         </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-muted fw-semibold aLink"
-            href="#"
+            href="/"
             id="mediaDropdown"
             role="button"
             data-bs-toggle="dropdown"
@@ -44,35 +48,37 @@
             MEDIA
           </a>
           <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
-            <li><a class="dropdown-item" href="#">Blog</a></li>
-            <li><a class="dropdown-item" href="#">Videos</a></li>
+            <li><a class="dropdown-item" href="/">Blog</a></li>
           </ul>
         </li>
         <li class="nav-item d-flex align-items-center justify-content-between">
           <a
             class="nav-link text-muted fw-semibold aLink d-flex align-items-center justify-content-between"
-            href="#"
+            href="/"
           >
             SUPPORT <i class="bi bi-arrow-up-right"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-muted fw-semibold aLink" href="#">ABOUT</a>
+          <a class="nav-link text-muted fw-semibold aLink" href="/">ABOUT</a>
         </li>
       </ul>
 
       <!-- Right side buttons -->
-      <div class="d-flex align-items-center pe-3">
+      <div class="d-flex flex-column flex-md-row align-items-center gap-2">
         <a
-          class="text-muted me-3 small text-decoration-none fw-semibold"
-          href="/signin"
-          >Sign In</a
+          class="text-muted small text-decoration-none fw-semibold fs-6 ragisterButton signInButton"
+          href="/"
         >
-        <a class="btn btn-primary btn-sm px-3 fw-semibold p-2" href="/signup"
-          >Sign Up Now</a
+          Sign In
+        </a>
+        <a
+          class="btn btn-primary btn-sm px-3 fw-semibold fs-6 signUpButton"
+          href="/"
         >
+          Sign Up Now
+        </a>
       </div>
     </div>
   </div>
 </nav>
-

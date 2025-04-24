@@ -1,3 +1,48 @@
+.splWidth {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.maxWidth300 {
+  max-width: 300px;
+}
+
+.minHeight400 {
+  min-height: 400px;
+}
+
+.chartHeight {
+  height: 350px;
+}
+
+.smallDigitDiv {
+  height: 30px;
+  width: 30px;
+}
+
+.phoneView {
+  max-height: 600px;
+  border-radius: 20px;
+}
+
+.userReview {
+  height: 200px;
+  width: 400px;
+}
+
+.commaPhoto {
+  height: 30px;
+  width: 40px;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.bgSpl {
+  background-color: #d1ecf137;
+}
+
 .textColor {
   color: rgb(130, 2, 249);
 }
@@ -6,60 +51,54 @@
   height: 70px;
 }
 
-.chartAnalysis{
-    height: 400px;
+.chartAnalysis {
+  height: 400px;
 }
 
-
-.sharkInvestors{
-    height: 300px;
+.sharkInvestors {
+  height: 300px;
 }
 
-.smallPhoto{
+.smallPhoto {
   width: 500px;
   height: 500px;
 }
 
-.splImage{
+.splImage {
   width: 60px;
 }
 
-
-.imppho{
-  height: 500px;
+.footImg {
+  height: 100%;
+  width: 100%;
 }
-
-
 
 @media (max-width: 500px) {
   .smallText {
     font-size: 10px;
   }
-  
-.sharkInvestors{
+
+  .sharkInvestors {
     height: 200px;
-}
+  }
 
-.splH2{
+  .splH2 {
     font-size: 20px;
+  }
+
+  .smallPhoto {
+    width: 300px;
+    height: 400px;
+  }
+
+  .splImage {
+    width: 20px;
+  }
+
+  .Imp {
+    gap: 0px;
+  }
 }
-
-.smallPhoto{
-  width: 300px;
-  height: 400px;
-}
-
-.splImage{
-  width: 20px;
-}
-
-.Imp{
-  gap: 0px;
-}
-
-}
-
-
 
 @media (max-width: 576px) {
   h2 {
@@ -70,24 +109,17 @@
   }
 }
 
-
-
-
-/* Ensure the hero section container positions its content relative to the image */
 .hero-section {
   position: relative;
 }
 
-/* Overlay container centered on the image */
 .hero-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* On smaller screens, keep some padding for legibility */
 }
 
-/* Responsive typography adjustments */
 @media (max-width: 576px) {
   .display-4 {
     font-size: 2rem;
@@ -103,7 +135,7 @@
     width: 130px;
   }
 
-  .imppho{
+  .footImg {
     height: 300px;
   }
 }
@@ -115,4 +147,3 @@
 .text-muted {
   color: #6c757d !important;
 }
-

@@ -44,3 +44,10 @@ img {
   }
 }
  
+
+.alert {
+  color: red;
+  padding: 10px;
+  background-color: #ffe5e5;
+  border-radius: 5px;
+}
