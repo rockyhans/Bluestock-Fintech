@@ -1,0 +1,39 @@
+body {
+  background-color: #f8f9fa; /* light grey color */
+}
+
+.SplDiv {
+  width: 98%;
+  margin-left: 1%;
+}
+
+.card-title {
+  font-size: 1.1rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+input.form-control::placeholder {
+  color: #999;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: #6c757d; /* optional: makes the arrow grey */
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+}
+
+.badge {
+  background-color: #b2f5ea;
+  color: #0c5460;
+}

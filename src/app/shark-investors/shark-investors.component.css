@@ -20,7 +20,7 @@ body{
   .breadcrumb-item + .breadcrumb-item::before {
     content: ">";
     padding: 0 0.5rem;
-    color: #6c757d; /* optional: makes the arrow grey */
+    color: #6c757d; /* optional: makes the arrow grey */ 
   }
   
   

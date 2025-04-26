@@ -1,0 +1,68 @@
+.pageWidth{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d; /* optional: change color */
+    padding: 0 0.5rem;
+  }
+
+  
+  .border-dotted{
+    border: 3px dashed black;
+    border-radius: 5px;
+  }
+
+
+  .card {
+    border: none;
+    border-radius: 12px;
+  }
+
+
+
+
+  
+  img.rounded-circle {
+    object-fit: cover;
+  }
+  
+  .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 12px;
+  }
+  
+
+
+
+
+  .custom-list {
+    list-style: none; /* remove default bullets */
+    padding-left: 0;
+  }
+  
+  .custom-list li {
+    position: relative;
+    padding-left: 20px; /* give space for the circle */
+  }
+  
+  .custom-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 33%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 2px solid blue; /* blue border */
+    border-radius: 50%; /* makes it a circle */
+    background-color: transparent; /* empty inside */
+  }
+
+  .buttonImage{
+    margin-left: 15rem;
+  }
+  

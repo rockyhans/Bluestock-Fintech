@@ -24,7 +24,7 @@ export class SharkInvestorsComponent {
     },
     {
       name: 'Ashish Kacholia',
-      image: '../../assets/imagggg.jpg',
+      image: '../../assets/imagggg.jpg', 
     }
   ];
 }

@@ -13,6 +13,8 @@ import { CompThreeComponent } from './comp-three/comp-three.component';
 import { BrokerCompareComponent } from './broker-compare/broker-compare.component';
 import { SharkInvestorsComponent } from './shark-investors/shark-investors.component';
 import { AppHomePageComponent } from './app-home-page/app-home-page.component';
+import { CommunityComponent } from './community/community.component';
+import { SectorComponent } from './sector/sector.component';
 
 export const routes: Route[] = [
   { path: '', component: AppHomePageComponent },
@@ -28,6 +30,9 @@ export const routes: Route[] = [
   { path: 'All Broker', component: CompThreeComponent },
   { path: 'Broker Compare - Web', component: BrokerCompareComponent },
   { path: 'Shark Investors', component: SharkInvestorsComponent },
+  { path: 'community', component: CommunityComponent },
+  { path: 'sector', component: SectorComponent },
+
 
   { path: 'yyyy', component: BrokerComparisonComponent },
 
