@@ -19,7 +19,7 @@ export class AuthService {
   // Signup method with type-safe data
   signup(data: UserData): Observable<any> {
     return this.http.post(
-      'https://4d75-122-181-78-180.ngrok-free.app/api/auth/signup',
+      'https://4d75-122-181-78-180.ngrok-free.app/auth/signup',
       data,
       {
         withCredentials: true, // Include credentials in the request
