@@ -15,6 +15,7 @@ import { SharkInvestorsComponent } from './shark-investors/shark-investors.compo
 import { AppHomePageComponent } from './app-home-page/app-home-page.component';
 import { CommunityComponent } from './community/community.component';
 import { SectorComponent } from './sector/sector.component';
+import { CareerComponent } from './career/career.component';
 
 export const routes: Route[] = [
   { path: '', component: AppHomePageComponent },
@@ -32,6 +33,8 @@ export const routes: Route[] = [
   { path: 'Shark Investors', component: SharkInvestorsComponent },
   { path: 'community', component: CommunityComponent },
   { path: 'sector', component: SectorComponent },
+  { path: 'career', component: CareerComponent },
+
 
 
   { path: 'yyyy', component: BrokerComparisonComponent },

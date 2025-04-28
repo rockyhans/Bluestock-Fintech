@@ -1,11 +1,20 @@
 <div
   class="container d-flex align-items-center justify-content-center min-vh-100"
 >
+  <!-- Error Message -->
   <div
     *ngIf="errorMessage"
     class="alert alert-danger text-center position-fixed top-0 mt-2"
   >
     {{ errorMessage }}
+  </div>
+
+  <!-- Success Message -->
+  <div
+    *ngIf="successMessage"
+    class="alert alert-success text-center position-fixed top-0 mt-2"
+  >
+    {{ successMessage }}
   </div>
 
   <div class="p-4 divImpo">
@@ -22,9 +31,9 @@
       <strong class="mb-3">Create an account</strong>
 
       <div class="mb-3 w-100">
-        <label for="email" class="form-label boldImp">Name</label>
+        <label for="name" class="form-label boldImp">Name</label>
         <input
-          type="name"
+          type="text"
           formControlName="name"
           class="form-control border shadow-none"
           id="name"
@@ -45,7 +54,6 @@
 
       <div class="mb-0 d-flex justify-content-between align-items-center w-100">
         <label for="password" class="form-label boldImp">Password</label>
-        <!-- <a href="#" class="small text-decoration-none">Forgot Password?</a> -->
       </div>
       <div class="d-flex border mb-3 rounded-2 w-100">
         <input
@@ -58,7 +66,7 @@
           type="button"
           class="btn border-0"
           (click)="showPassword = !showPassword"
-          title="xyz"
+          title="Show Password"
         >
           <i
             class="bi"
@@ -69,22 +77,17 @@
 
       <div class="d-flex">
         <p>By continuing, you agree to our</p>
-
         <p class="text-primary ms-1">terms of service.</p>
       </div>
 
       <div
-        class="p-3 mb-3 border border-2 border-dark rounded-4 checkboxDiv w-100"
+        class="p-1 mb-3 border border-dark rounded-4 d-flex justify-content-center bg-white w-100 shadow-none"
       >
-        <input
-          type="checkbox"
-          class="form-check-input shadow-none"
-          id="robotCheck"
-          formControlName="isRobot"
-        />
-        <label class="form-check-label ms-2" for="robotCheck"
-          >I'm not a robot</label
-        >
+        <re-captcha
+          [siteKey]="'6LeGVCcrAAAAAMowxgrDb6_pAZtm_p8cpGdNpHmd'"
+          [size]="captchaSize"
+          (resolved)="onCaptchaResolved($event)"
+        ></re-captcha>
       </div>
 
       <button type="submit" class="btn btn-primary w-100">Sign Up</button>
@@ -93,11 +96,15 @@
         or sign up with
       </div>
 
-      <button type="button" class="btn btn-light border w-100 mb-2">
+      <button
+        type="button"
+        (click)="onGoogleSignup()"
+        class="btn btn-light border w-100 mb-2"
+      >
         <img
           src="https://img.icons8.com/color/16/000000/google-logo.png"
           class="me-2"
-          alt="xyxyyx"
+          alt="Google logo"
         />
         Continue with Google
       </button>

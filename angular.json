@@ -54,7 +54,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "allowedHosts": ["*"],
+            "proxyConfig": "proxy.conf.json",
+            "allowedHosts": ["497c-2401-4900-35fb-52c2-bd64-9be2-ea4b-2881.ngrok-free.app"],
             "disableHostCheck": true,
             "port": 4200
           },

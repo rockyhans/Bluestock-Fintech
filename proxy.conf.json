@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://b0de-122-181-78-180.ngrok-free.app",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  
