@@ -14,64 +14,6 @@
   padding: 0 0.5rem;
 }
 
-.border-dotted {
-  border: 3px dashed black;
-  border-radius: 5px;
-}
-
-.card {
-  border: none;
-  border-radius: 12px;
-}
-
-img.rounded-circle {
-  object-fit: cover;
-}
-
-.badge {
-  font-size: 12px;
-  padding: 6px 12px;
-  border-radius: 12px;
-}
-
-.custom-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.custom-list li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.custom-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 33%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
-  border: 2px solid blue;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.buttonImage {
-  margin-left: 15rem;
-}
-
-.emptyDiv1 {
-  height: 500px;
-  width: auto;
-  flex: 1;
-}
-
-.emptyDiv2 {
-  height: 300px;
-  width: 300px;
-}
-
 .mobileImage {
   height: 400px;
   width: 350px;
@@ -107,187 +49,9 @@ input:focus {
   }
 }
 
-xyxy {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-xyxy .logo {
-  display: flex;
-  justify-content: space-between;
-}
-
-xyxy .logo img {
-  width: 100px;
-  height: 100px;
-}
-
-xyxy .logo p {
-  font-size: 2rem;
-}
-
-xyxy .logo:hover {
-  cursor: pointer;
-}
-
-xyxy section {
-  ul {
-    font-size: 12px;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    color: grey;
-  }
-}
-
-xyxy section ul li:hover {
-  cursor: pointer;
-}
-
-xyxy .button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-xyxy .button .button1 {
-  border: 2px;
-  background: white;
-  color: grey;
-  cursor: pointer;
-}
-
-xyxy .button .button2 {
-  border: 2px;
-  background: blue;
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  cursor: pointer;
-}
-
-.link {
-  margin-top: 30px;
-  margin-left: 70px;
-  text-decoration: none;
-}
-
-.link p a {
-  text-decoration: none;
-  font-size: 12px;
-}
-
-.link .careers {
-  color: grey;
-}
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: -5px;
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
-.opening1 {
-  text-decoration: none;
-}
-
-.opening1 p {
-  font-size: 50px;
-}
-
-.opening2 p {
-  margin-top: -40px;
-  font-size: 20px;
-}
-
-.opening1 button {
-  font-size: 12px;
-  background: blue;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  cursor: pointer;
-}
-
 .stock img {
   width: 500px;
   height: 275px;
-}
-
-.download {
-  background: blue;
-  width: 1590;
-  height: 496;
-  margin-top: 40px;
-  margin-left: 70px;
-  margin-right: 70px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.download img {
-  width: 20%;
-  height: 10%;
-  margin-left: 20px;
-  margin-bottom: -8.5px;
-}
-
-.download p {
-  color: rgb(215, 215, 44);
-  font-size: 24px;
-  margin: 10px;
-}
-
-.download .box p {
-  color: white;
-  font-size: 28px;
-}
-
-.download .box {
-  margin: 20px;
-}
-
-.download .box .text {
-  position: relative;
-}
-
-.download .box .text p {
-  font-size: 12px;
-}
-
-.download .box .text input {
-  width: 80%;
-  padding: 12px 120px 12px 12px;
-  font-size: 16px;
-  box-sizing: border-box;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  margin-left: 5px;
-}
-
-.download .box .text button {
-  position: absolute;
-  right: 130px;
-  top: 30px;
-  height: 50%;
-  border: none;
-  background: blue;
-  color: white;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .box .qrlink {
@@ -372,10 +136,6 @@ xyxy .button .button2 {
     font-size: 40px;
   }
 
-  .opening2 p {
-    font-size: 18px;
-  }
-
   .opening1 button {
     padding: 8px 20px;
   }
@@ -420,10 +180,6 @@ xyxy .button .button2 {
     font-size: 32px;
   }
 
-  .opening2 p {
-    font-size: 16px;
-  }
-
   .opening1 button {
     padding: 8px 16px;
     font-size: 14px;
@@ -440,32 +196,6 @@ xyxy .button .button2 {
 }
 
 @media screen and (max-width: 480px) {
-  xyxy .logo img {
-    width: 80px;
-    height: 80px;
-  }
-
-  xyxy .logo p {
-    font-size: 1.5rem;
-  }
-
-  xyxy .button {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .hero {
-    margin: 10px;
-  }
-
-  .hero p {
-    font-size: 28px;
-  }
-
-  .opening2 p {
-    font-size: 14px;
-  }
-
   .opening1 button {
     padding: 6px 14px;
     font-size: 12px;
