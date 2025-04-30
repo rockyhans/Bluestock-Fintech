@@ -6,8 +6,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
   standalone: true,
   imports: [NavbarComponent],
   templateUrl: './community.component.html',
-  styleUrl: './community.component.css'
+  styleUrl: './community.component.css',
 })
-export class CommunityComponent {
-
-}
+export class CommunityComponent {}

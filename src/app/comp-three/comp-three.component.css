@@ -1,10 +1,13 @@
 @media (max-width: 768px) {
-
-img{
-  height: 70px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
+  img {
+    height: 70px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
 }
+
+.imageLogo {
+  max-height: 150px;
 }

@@ -1,0 +1,176 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .logo img {
+  width: 100px;
+  height: 100px;
+}
+
+header .logo p {
+  font-size: 2rem;
+}
+
+header .logo:hover {
+  cursor: pointer;
+}
+
+header section {
+  ul {
+    font-size: 12px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: grey;
+  }
+}
+
+header section ul li:hover {
+  cursor: pointer;
+}
+
+header .button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+header .button .button1 {
+  border: 2px;
+  background: white;
+  color: grey;
+  cursor: pointer;
+}
+
+header .button .button2 {
+  border: 2px;
+  background: blue;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.hero {
+  background: rgb(207, 207, 207);
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero .text1 {
+  width: 50%;
+  font-size: 40px;
+  margin: 40px;
+}
+
+.hero .text2 {
+  margin: 50px;
+  width: 45%;
+}
+
+.hero .box {
+  height: 325px;
+  width: 500px;
+  background: pink;
+  margin-right: 100px;
+}
+
+.box1 {
+  background: rgb(203, 241, 203);
+  margin: 60px;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.box1 .text1 {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.box1 .text2 {
+  margin: 5px;
+  width: 45%;
+}
+
+.ipobox {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ipobox .box {
+  border-style: solid;
+  border-radius: 10px;
+  height: 275px;
+  width: 250px;
+  padding: 10px;
+}
+
+.ipobox .box .smallbox1 {
+  background: pink;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.ipobox .box .smallbox2 {
+  background: rgb(231, 203, 255);
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.ipobox .box .smallbox3 {
+  background: rgb(212, 255, 212);
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.bannerbox .ipobox {
+  justify-content: left;
+  gap: 80px;
+  margin-left: 100px;
+}
+
+.bannerbox .ipobox .box .smallbox1 {
+  background: pink;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.bannerbox .ipobox .box .smallbox2 {
+  background: rgb(231, 203, 255);
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.bannerbox .box2 {
+  background: rgb(231, 203, 255);
+  margin: 60px;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.bannerbox .box2 .text1 {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.bannerbox .box2 .text2 {
+  margin: 5px;
+  width: 45%;
+}

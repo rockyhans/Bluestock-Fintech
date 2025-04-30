@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { IpoService } from '../../ipo.service';
 @Component({
   selector: 'app-ipo-info',
   standalone: true,

@@ -1,0 +1,270 @@
+.pageWidth { 
+    width: 90%;
+    margin-left: 5%;
+  }
+
+
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    padding: 0 0.5rem;
+    color: #6c757d; /* optional: makes the arrow grey */ 
+  }
+  
+  
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img{
+    width: 100px;
+    height: 100px;
+}
+
+header .logo p{
+    font-size: 2rem;
+}
+
+header .logo:hover{
+    cursor: pointer;
+}
+
+header section{
+    ul{
+        font-size: 12px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        color: grey;
+    }
+}
+
+header section ul li:hover{
+    cursor: pointer;
+}
+
+header .button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+header .button .button1{
+    border: 2px;
+    background: white;
+    color: grey;
+    cursor: pointer;
+}
+
+header .button .button2{
+    border: 2px;
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    cursor: pointer;
+}
+
+.link{
+    margin-top: 30px;
+    margin-left: 70px;
+    text-decoration: none;
+}
+
+
+.link p a{
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.link .careers{
+    color: grey;
+}
+
+.hero .t1{
+    font-size: 28px;
+    margin-left: 70px;
+    width: 600px;
+}
+
+.hero .t2{
+    margin-left: 70px;
+    width: 500px;
+    color: grey;
+}
+
+.box{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.box1{
+    border-radius: 10px;
+    width: 250px;
+    background: #6385FF;
+}
+
+.box1 p{
+    color: white;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.box1 .text1{
+    font-size: 24px;
+    margin-top: 80px;
+}
+
+.box1 .text2{
+    font-size: 18px;
+    color: #3D3D3D;
+}
+
+.news{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news .text1{
+    color: grey;
+}
+
+.news .text2{
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+.news .box{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 80px;
+}
+
+.news .last{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 12px;
+}
+
+.news .last a{
+    color: #5D12D2;
+    text-decoration: none;
+}
+
+.news .box .box1{
+    background: #F3F5FFE5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.news .box .box1 img{
+    height: 25px;
+    width: auto;
+}
+
+.news .box .box1 .text1{
+    display: inline;
+    margin: 0px;
+    color: #C83E4B;
+}
+
+.news .box .box1 .text2{
+    color: black;
+    font-size: 10px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.news .box .box1 .text1 .red{
+    color: #FF0000;
+}
+
+.news .box .box1 .text1 .blue{
+    color: #00B2FF;
+}
+
+.banner{
+    background: #6385FF;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 50px;
+    color: white;
+    border-radius: 20px;
+}
+
+.banner button{
+    width: 100px;
+    height: 35px;
+    background: #5233AC;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.banner .text1{
+    font-size: 28px;
+}
+
+.banner .text2, .text3{
+    font-size: 14px;
+    margin-top: 20px;
+    width: 575px;
+}
+
+.faq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq .text1{
+    font-size: 48px;
+}
+
+.faq details {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 171, 171);
+    cursor: pointer;
+    width: 500px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1)
+  }
+  
+  .faq summary {
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  
+  .faq p {
+    margin-top: 10px;
+    color: #333;
+  }
+  

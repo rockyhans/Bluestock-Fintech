@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule here
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +18,6 @@ export class SignupComponent {
   showPassword = false;
   errorMessage: string = '';
   successMessage: string = '';
-  captchaToken: string = '';
   screenWidth: number = window.innerWidth;
   captchaSize: 'normal' | 'compact' = 'normal';
 
@@ -31,14 +30,8 @@ export class SignupComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      keepSignedIn: [false],
     });
     this.setCaptchaSize();
-  }
-
-  // Callback when CAPTCHA is resolved
-  onCaptchaResolved(token: string | null) {
-    this.captchaToken = token || ''; // set empty string if null
   }
 
   // Adjust captcha size based on screen width
@@ -46,38 +39,33 @@ export class SignupComponent {
     this.captchaSize = this.screenWidth < 500 ? 'compact' : 'normal';
   }
 
-  // Listen for window resize to adjust captcha size
+  // Listen for window resize automatically
+  @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = event.target.innerWidth;
     this.setCaptchaSize();
   }
 
-  // Handle form submission for signup
+  // Submit signup form
   onSignup() {
-    if (!this.captchaToken) {
-      this.errorMessage = 'Please complete the CAPTCHA before signing up.';
-      this.successMessage = '';
-      return;
-    }
-
     if (this.signupForm.valid) {
       const { name, email, password } = this.signupForm.value;
-      const user = { name, email, password, captchaToken: this.captchaToken };
+      const userData = { name, email, password };
 
-      this.authService.signup(user).subscribe({
+      this.authService.signup(userData).subscribe({
         next: (res) => {
           console.log('Signup successful:', res);
           this.errorMessage = '';
-          this.successMessage = 'Account created successfully! 🎉';
+          this.successMessage =
+            res.message || 'Account created successfully! 🎉';
           this.signupForm.reset();
-          this.captchaToken = ''; // reset captcha token after success
 
           setTimeout(() => {
             this.router.navigate(['/Sign In']);
           }, 2000);
         },
         error: (err) => {
-          console.error('Signup error:', err.error.errors);
+          console.error('Signup error:', err);
           this.successMessage = '';
           this.errorMessage = err.error?.message || 'Something went wrong!';
         },
@@ -89,8 +77,28 @@ export class SignupComponent {
     }
   }
 
-  // Redirect for Google signup
+  // Google signup
   onGoogleSignup() {
-    this.authService.oauthSignup();
+    const dummyGoogleUser = {
+      name: 'Google User',
+      email: 'googleuser@example.com',
+      googleId: 'FAKE_GOOGLE_ID',
+    };
+
+    this.authService.googleSignup(dummyGoogleUser).subscribe({
+      next: (res) => {
+        console.log('Google signup successful:', res);
+        this.errorMessage = '';
+        this.successMessage = res.message || 'Google signup successful! 🎉';
+        setTimeout(() => {
+          this.router.navigate(['/Sign In']);
+        }, 2000);
+      },
+      error: (err) => {
+        console.error('Google signup error:', err);
+        this.successMessage = '';
+        this.errorMessage = err.error?.message || 'Google signup failed!';
+      },
+    });
   }
 }

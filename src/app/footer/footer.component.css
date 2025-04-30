@@ -9,7 +9,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #1d4ed8; /* Tailwind blue-700 vibe */
+  color: #1d4ed8;
 }
 
 footer i {
@@ -22,7 +22,7 @@ footer i:hover {
   color: #0d6efd; /* Bootstrap primary */
 }
 
-.startupIndiaLogo{
+.startupIndiaLogo {
   height: 50px;
   width: 200px;
 }

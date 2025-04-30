@@ -1,35 +1,42 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-// Define the interface for the user data to ensure type safety
-export interface UserData {
-  name: string;
-  email: string;
-  password: string;
-  captchaToken: string; // Include captchaToken if needed
-}
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private apiUrl = 'http://localhost:5000/api/auth';
+
   constructor(private http: HttpClient) {}
 
-  // Signup method with type-safe data
-  signup(data: UserData): Observable<any> {
-    return this.http.post(
-      'https://4d75-122-181-78-180.ngrok-free.app/auth/signup',
-      data,
-      {
-        withCredentials: true, // Include credentials in the request
-      }
-    );
+  signup(userData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signup`, userData);
+  }
+  signin(credentials: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, credentials);
   }
 
-  // OAuth Signup redirection
-  oauthSignup() {
-    window.location.href =
-      'https://b0de-122-181-78-180.ngrok-free.app/api/auth/signup/OAuth/account/google?state=signup';
+  googleSignup(googleData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/google`, googleData);
+  }
+  registerIpo(ipoData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}`, ipoData);
+  }
+
+  getAllIpos(): Observable<any> {
+    return this.http.get(`${this.apiUrl}`);
+  }
+
+  getIpoById(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+  updateIpo(id: string, ipoData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, ipoData);
+  }
+
+  deleteIpo(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

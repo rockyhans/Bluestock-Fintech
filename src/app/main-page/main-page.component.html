@@ -1,4 +1,3 @@
-
 <div class="container mt-3">
   <nav>
     <ol class="breadcrumb small">
@@ -15,21 +14,22 @@
 
   <div>
     <h3 class="fw-bold">Upcoming IPO</h3>
-    <p class="text-muted small boldText">
+    <p class="text-muted small boldText fw-semibold">
       Companies that have filed for an IPO with SEBI. Few details might be
       disclosed by the companies later.
     </p>
   </div>
 </div>
 
-
-
 <div class="container my-4 mainPage pb-5">
   <div class="row g-4">
     <div class="col-md-4" *ngFor="let ipo of ipoList">
- 
       <div class="card p-4 shadow-sm rounded-2 border-0">
-        <div class="position-absolute top-0 end-0 bg-success  p-1 fw-bold models">Models</div>
+        <div
+          class="position-absolute top-0 end-0 bg-success p-1 fw-bold models"
+        >
+          Models
+        </div>
         <div class="d-flex align-items-center mb-3">
           <img
             [src]="ipo.logo"

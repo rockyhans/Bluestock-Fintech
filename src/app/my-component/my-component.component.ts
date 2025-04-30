@@ -40,7 +40,6 @@ export class MyComponentComponent {
       listing: '2016-06-10',
       status: 'New Listed',
     },
-    // Add more IPO entries...
   ];
 
   getBadgeClass(status: string): string {

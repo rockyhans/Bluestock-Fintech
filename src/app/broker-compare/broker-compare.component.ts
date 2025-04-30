@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 
 import { ChartOptions, ChartType, ChartDataset, ChartData } from 'chart.js';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-broker-compare',
   standalone: true,
-  imports: [CommonModule, NgChartsModule],
+  imports: [CommonModule, NgChartsModule, NavbarComponent],
   templateUrl: './broker-compare.component.html',
   styleUrls: ['./broker-compare.component.css'],
 })

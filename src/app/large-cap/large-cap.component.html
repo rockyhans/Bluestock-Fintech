@@ -1,0 +1,147 @@
+<app-navbar></app-navbar>
+
+<div
+  class="container-fluid mt-5 d-flex flex-column align-items-center justify-content-evenly"
+>
+  <div class="mb-3" style="width: 95%">
+    <a routerLink="/" class="text-primary text-decoration-none fw-semibold"
+      >Home</a
+    >
+    <span class="text-muted ms-2 fw-semibold">› Mutual Fund</span>
+  </div>
+
+  <!-- Hero Section -->
+  <div
+    class="row p-4 align-items-center mb-5 mt-5 d-flex flex-column align-items-center justify-content-evenly"
+    style="background-color: rgb(204, 200, 200)"
+  >
+    <div
+      class="container row rounded align-items-center justify-content-between p-3"
+      style="width: 90%"
+    >
+      <div class="col-md-9">
+        <h1 class="fw-bold">Large Cap Mutual Funds</h1>
+        <p class="text-dark mb-0 w-50 fw-bold">
+          Large Cap funds invest in stocks of the top 100 companies in terms of
+          full market capitalization. They invest at least 80% of their assets
+          in large cap companies. These funds are relatively less riskier than
+          other market cap funds.
+        </p>
+      </div>
+      <div class="col-md-3 text-end">
+        <div
+          class="bg-primary-subtle"
+          style="height: 300px; width: 100%; border-radius: 0.5rem"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Title -->
+  <h3 class="fw-bold text-center">Overview of Large Cap Mutual Funds</h3>
+
+  <div class="row mt-5" style="width: 85%">
+    <!-- Sidebar -->
+    <div class="col-md-3 mb-4">
+      <div
+        class="rounded p-3 border border-1 border-dark"
+        style="background-color: rgb(204, 200, 200)"
+      >
+        <h6 class="fw-semibold mb-3">Fund categories</h6>
+        <ul class="list-unstyled d-flex flex-column gap-3">
+          <li
+            *ngFor="
+              let category of ['Equity', 'Debt', 'Hybrid', 'Commodity', 'Other']
+            "
+            class="d-flex justify-content-between py-2 fw-semibold"
+          >
+            <span>{{ category }}</span>
+            <i
+              class="bi bi-chevron-down border-start ps-4 border-dark fw-bolder"
+            ></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fund List -->
+    <div class="col-md-9">
+      <div
+        *ngFor="let fund of funds"
+        class="rounded mb-4 shadow-sm"
+        style="background-color: rgb(204, 200, 200)"
+      >
+        <div
+          class="d-flex justify-content-between align-items-center mb-2 border-bottom border-1 border-dark p-3"
+        >
+          <div class="d-flex align-items-center gap-5">
+            <img
+              src="../../assets/impo/image.png "
+              class="rounded"
+              alt="Fund logo"
+              style="height: 100px; width: 100px"
+            />
+            <div class="d-flex flex-column gap-1">
+              <strong>{{ fund.name }}</strong>
+              <div
+                class="d-flex align-items-center justify-content-between gap-5 text-muted small"
+              >
+                <div class="d-flex flex-column text-dark">
+                  AUM
+                  <p class="fw-semibold">{{ fund.aum }}</p>
+                </div>
+                <div class="d-flex flex-column text-dark">
+                  Expense Ratio
+                  <p class="fw-semibold">{{ fund.expenseRatio }}</p>
+                </div>
+                <div class="d-flex flex-column text-dark">
+                  5Y CAGR
+                  <p
+                    [class.text-success]="fund.cagrPositive"
+                    [class.text-danger]="!fund.cagrPositive"
+                    class="fw-semibold"
+                  >
+                    <i
+                      class="bi"
+                      [ngClass]="
+                        fund.cagrPositive
+                          ? 'bi-caret-up-fill'
+                          : 'bi-caret-down-fill'
+                      "
+                    ></i>
+                    {{ fund.cagr }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <i class="bi bi-chevron-down me-4 fw-bolder"></i>
+        </div>
+
+        <div class="mt-3 p-4">
+          <div class="d-flex">
+            <i class="bi bi-bar-chart-line-fill text-success fs-2"></i>
+            <div class="ms-3 fw-bold">
+              Performance<br />
+              <p class="fw-semibold">{{ fund.performance }}</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i class="bi bi-exclamation-circle-fill text-danger fs-2"></i>
+            <div class="ms-3 fw-bold">
+              Risk <br />
+              <p class="fw-semibold">{{ fund.risk }}</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i class="bi bi-pie-chart-fill text-info fs-2"></i>
+            <div class="ms-3 fw-bold">
+              Composition <br />
+              <p class="fw-semibold">{{ fund.composition }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

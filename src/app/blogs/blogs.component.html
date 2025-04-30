@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container my-5">
+    <div class="mb-3">
+      <a routerLink="/" class="text-primary text-decoration-none fw-bold">Home</a> <span class="text-muted ms-2 text-muted fw-semibold">› Blogs</span>
+    </div>
+  
+    <h2 class="text-center fw-semibold mb-4">BLUESTOCK BLOG</h2>
+  
+    <div class="row g-4 mt-5 ">
+      <div class="col-md-4" *ngFor="let blog of blogs">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="bg-primary" style="height: 200px;   border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;"></div>
+          <div class="card-body text-center">
+            <h6 class="fw-semibold">{{ blog.title }}</h6>
+            <p class="text-muted small mb-0 fw-semibold">
+              {{ blog.date }} &nbsp; · &nbsp; {{ blog.readTime }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

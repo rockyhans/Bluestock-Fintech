@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-import { Location } from '@angular/common';
-import { CommonModule } from '@angular/common'; // ✅ this is needed for ngStyle, ngFor, etc.
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-comp-three',
@@ -44,8 +42,6 @@ export class CompThreeComponent {
     },
   ];
 }
-
-// Inside not-found.component.ts (or whichever component you're using for the broker cards)
 
 export interface BrokerCard {
   name: string;
