@@ -106,6 +106,6 @@ export class SigninComponent {
   
 
   onGoogleSignin() {
-    window.location.href = 'http://localhost:9000/OAuth/account/google/login';
+    window.location.href = 'https://bluestockbackend.onrender.com/OAuth/account/google/login';
   }
 }
