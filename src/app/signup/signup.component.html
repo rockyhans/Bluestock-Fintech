@@ -80,15 +80,17 @@
         <p class="text-primary ms-1">terms of service.</p>
       </div>
 
-      <!-- <div
+      <div
         class="p-1 mb-3 border border-dark rounded-4 d-flex justify-content-center bg-white w-100 shadow-none"
       >
         <re-captcha
-          [siteKey]="'6LeobycrAAAAABiDOpOHUIv7Dg5kAZ_x88XX9bGc'"
+          #recaptchaRef
+          [siteKey]="'6LfQ0ikrAAAAAPc3I05Re7HabmQbD3qBpySzaTqR'"
           [size]="captchaSize"
           (resolved)="onCaptchaResolved($event)"
-        ></re-captcha>
-      </div> -->
+        >
+        </re-captcha>
+      </div>
 
       <button type="submit" class="btn btn-primary w-100">Sign Up</button>
 

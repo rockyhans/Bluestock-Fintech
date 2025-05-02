@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -21,6 +21,9 @@ export class SignupComponent {
   screenWidth: number = window.innerWidth;
   captchaSize: 'normal' | 'compact' = 'normal';
 
+  captchaToken: string | null = null; // 👈 store token here
+  user: any;
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -29,36 +32,57 @@ export class SignupComponent {
     this.signupForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
     this.setCaptchaSize();
+    
   }
 
-  // Adjust captcha size based on screen width
-  setCaptchaSize() {
-    this.captchaSize = this.screenWidth < 500 ? 'compact' : 'normal';
+  ngOnInit() {
+    this.user = this.authService.getUser();
   }
 
-  // Listen for window resize automatically
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = event.target.innerWidth;
     this.setCaptchaSize();
   }
 
-  // Submit signup form
+  setCaptchaSize() {
+    this.captchaSize = this.screenWidth < 500 ? 'compact' : 'normal';
+  }
+
+  // 👇 Capture reCAPTCHA token
+  onCaptchaResolved(token: string | null) {
+    this.captchaToken = token;
+  }
+
+  
+
   onSignup() {
     if (this.signupForm.valid) {
+      if (!this.captchaToken) {
+        this.errorMessage = 'Please complete the reCAPTCHA.';
+        return;
+      }
+
       const { name, email, password } = this.signupForm.value;
-      const userData = { name, email, password };
+      const userData = {
+        name,
+        email,
+        password,
+        recaptchaToken: this.captchaToken,
+      };
 
       this.authService.signup(userData).subscribe({
         next: (res) => {
-          console.log('Signup successful:', res);
+          console.log('Signup successful:', res?.message);
+
           this.errorMessage = '';
           this.successMessage =
             res.message || 'Account created successfully! 🎉';
           this.signupForm.reset();
+          this.captchaToken = null; // reset captcha token
 
           setTimeout(() => {
             this.router.navigate(['/Sign In']);
@@ -77,28 +101,8 @@ export class SignupComponent {
     }
   }
 
-  // Google signup
   onGoogleSignup() {
-    const dummyGoogleUser = {
-      name: 'Google User',
-      email: 'googleuser@example.com',
-      googleId: 'FAKE_GOOGLE_ID',
-    };
-
-    this.authService.googleSignup(dummyGoogleUser).subscribe({
-      next: (res) => {
-        console.log('Google signup successful:', res);
-        this.errorMessage = '';
-        this.successMessage = res.message || 'Google signup successful! 🎉';
-        setTimeout(() => {
-          this.router.navigate(['/Sign In']);
-        }, 2000);
-      },
-      error: (err) => {
-        console.error('Google signup error:', err);
-        this.successMessage = '';
-        this.errorMessage = err.error?.message || 'Google signup failed!';
-      },
-    });
+    window.location.href = 'http://localhost:9000/OAuth/account/google/signup';
   }
+  
 }

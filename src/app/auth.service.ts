@@ -1,42 +1,62 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { importProvidersFrom, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+interface SigninRequest {
+  email: string;
+  password: string;
+  recaptchaToken: string;
+}
+
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/api/auth';
+  private baseUrl = 'http://localhost:9000'; // or use environment
 
   constructor(private http: HttpClient) {}
 
-  signup(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signup`, userData);
-  }
-  signin(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
-  }
-
-  googleSignup(googleData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/google`, googleData);
-  }
-  registerIpo(ipoData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, ipoData);
+  signup(data: {
+    name: string;
+    email: string;
+    password: string;
+  }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/auth/signup`, data, {
+      withCredentials: true,
+    });
   }
 
-  getAllIpos(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`);
+  signin(data: SigninRequest): Observable<any> {
+    return this.http.post(`${this.baseUrl}/auth/login`, data);
   }
 
-  getIpoById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+  getUser(): any {
+    const user =
+      localStorage.getItem('user') || sessionStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
+  
+  
+  verifySession(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/verify-session`, {
+      withCredentials: true,
+    });
   }
 
-  updateIpo(id: string, ipoData: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, ipoData);
+
+  private userSubject = new BehaviorSubject<any>(null);
+  user$ = this.userSubject.asObservable();
+
+  setUser(user: any) {
+    this.userSubject.next(user);
   }
 
-  deleteIpo(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
-  }
+ 
+
+  // onGoogleSignup() {
+  //   window.location.href = `${this.baseUrl}/OAuth/account/google/signup`;
+  // }
+
+  // onGoogleSignin() {
+  //   window.location.href = `${this.baseUrl}/OAuth/account/google?state='login`;
+  // }
 }

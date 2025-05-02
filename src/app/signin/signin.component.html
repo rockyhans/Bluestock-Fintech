@@ -1,6 +1,22 @@
 <div
   class="container d-flex align-items-center justify-content-center min-vh-100"
 >
+
+<!-- Error Message -->
+<div
+*ngIf="errorMessage"
+class="alert alert-danger text-center position-fixed top-0 mt-2"
+>
+{{ errorMessage }}
+</div>
+
+<!-- Success Message -->
+<div
+*ngIf="successMessage"
+class="alert alert-success text-center position-fixed top-0 mt-2"
+>
+{{ successMessage }}
+</div>
   <div class="p-4 divImpo">
     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
       <img src="../../assets/logo.png" alt="logo" class="logoImg" />
@@ -12,6 +28,7 @@
       [formGroup]="signinForm"
       class="d-flex flex-column align-items-center justify-content-center"
     >
+      <!-- Email -->
       <div class="mb-3 w-100">
         <label for="email" class="form-label boldImp">Email Address</label>
         <input
@@ -23,6 +40,7 @@
         />
       </div>
 
+      <!-- Password -->
       <div class="mb-0 d-flex justify-content-between align-items-center w-100">
         <label for="password" class="form-label boldImp">Password</label>
         <a
@@ -31,37 +49,37 @@
           >Forgot Password?</a
         >
       </div>
-      <div class="d-flex border mb-3 rounded-2 w-100">
+      <div class="mb-3 w-100">
         <input
-          [type]="showPassword ? 'text' : 'password'"
+          type="password"
           formControlName="password"
-          class="form-control border-0 shadow-none"
+          class="form-control border shadow-none"
           id="password"
+          placeholder="Enter your password"
         />
-        <button
-          type="button"
-          class="btn border-0"
-          (click)="showPassword = !showPassword"
-          title="xyz"
-        >
-          <i
-            class="bi"
-            [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
-          ></i>
-        </button>
       </div>
 
-      <!-- <div
-        class="p-3 mb-3 border border-2 border-dark rounded-4 checkboxDiv w-100"
+      <!-- reCAPTCHA -->
+      <div
+        class="p-1 mb-3 border border-dark rounded-4 d-flex justify-content-center bg-white w-100 shadow-none"
       >
+        <re-captcha
+          [siteKey]="'6LfQ0ikrAAAAAPc3I05Re7HabmQbD3qBpySzaTqR'"
+          [size]="captchaSize"
+          (resolved)="onCaptchaResolved($event)"
+        ></re-captcha>
+      </div>
+
+      <!-- Keep me signed in -->
+      <!-- <div class="form-check mb-3 checkboxDiv w-100">
         <input
           type="checkbox"
           class="form-check-input shadow-none"
-          id="robotCheck"
-          formControlName="isRobot"
+          id="keepSigned"
+          formControlName="keepSignedIn"
         />
-        <label class="form-check-label ms-2" for="robotCheck"
-          >I'm not a robot</label
+        <label class="form-check-label" for="keepSigned"
+          >Keep me signed in</label
         >
       </div> -->
 
@@ -72,26 +90,33 @@
           id="keepSigned"
           formControlName="keepSignedIn"
         />
-        <label class="form-check-label" for="keepSigned"
-          >Keep me signed in</label
-        >
+        <label class="form-check-label" for="keepSigned">
+          Keep me signed in
+        </label>
       </div>
+      
 
+      <!-- Login Button -->
       <button type="submit" class="btn btn-primary w-100">Login</button>
 
+      <!-- Google Sign In -->
       <div class="text-center d-inline-block my-3 text-muted smokeBg p-2">
         or sign in with
       </div>
-
-      <button type="button" class="btn btn-light border w-100 mb-2">
+      <button
+        type="button"
+        class="btn btn-light border w-100 mb-2"
+        (click)="onGoogleSignin()"
+      >
         <img
           src="https://img.icons8.com/color/16/000000/google-logo.png"
           class="me-2"
-          alt="xyxyyx"
+          alt="Google logo"
         />
         Continue with Google
       </button>
 
+      <!-- Link to Signup -->
       <div class="text-center mt-3">
         <a href="/Sign Up" class="text-decoration-none fw-bold"
           >Create an account</a

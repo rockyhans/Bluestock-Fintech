@@ -4,12 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { IpoInfoComponent } from '../ipo-info/ipo-info.component';
-
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule , DashboardComponent , IpoInfoComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    DashboardComponent,
+    IpoInfoComponent,
+  ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
@@ -33,6 +39,24 @@ export class SidebarComponent {
     rhpLink: 'xxx.xx',
     drhpLink: 'xxx.xx',
   };
+
+  user: any;
+
+  constructor(private authService: AuthService) {}
+
+  userName: string = '';
+  userInitial: string = '';
+
+
+  ngOnInit() {
+    const user = this.authService.getUser();
+    if (user) {
+      this.userName = user.name;
+    }
+    if (user && user.name) {
+      this.userInitial = user.name.charAt(0).toUpperCase(); // Get first letter, uppercase
+    }
+  }
 
   uploadLogo(event: any) {
     const file = event.target.files[0];

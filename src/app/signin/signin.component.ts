@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { RecaptchaModule, RecaptchaComponent } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RecaptchaModule],
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
 })
@@ -17,6 +18,10 @@ export class SigninComponent {
   showPassword = false;
   errorMessage: string = '';
   successMessage: string = '';
+  screenWidth: number = window.innerWidth;
+  captchaSize: 'normal' | 'compact' = 'normal';
+
+  captchaToken: string | null = null; // 👈 store reCAPTCHA token
 
   constructor(
     private fb: FormBuilder,
@@ -25,30 +30,65 @@ export class SigninComponent {
   ) {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      keepSignedIn: [false],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      keepSignedIn: [false], // 👈 Add this line
+
     });
+
+    this.setCaptchaSize();
   }
 
-  // Handle form submission for signin
+  ngOnInit() {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = event.target.innerWidth;
+    this.setCaptchaSize();
+  }
+
+  setCaptchaSize() {
+    this.captchaSize = this.screenWidth < 500 ? 'compact' : 'normal';
+  }
+
+  // 👇 Capture reCAPTCHA token
+  onCaptchaResolved(token: string | null) {
+    this.captchaToken = token;
+  }
+
   onSignin() {
     if (this.signinForm.valid) {
+      if (!this.captchaToken) {
+        this.errorMessage = 'Please complete the reCAPTCHA.';
+        return;
+      }
+  
       const { email, password, keepSignedIn } = this.signinForm.value;
-      this.authService.signin({ email, password }).subscribe({
+      const userData = {
+        email,
+        password,
+        recaptchaToken: this.captchaToken,
+      };
+  
+      this.authService.signin(userData).subscribe({
         next: (res) => {
           console.log('Signin successful:', res);
-          this.errorMessage = '';
-          this.successMessage = 'Signed in successfully! 🎉';
-
-          if (keepSignedIn) {
-            localStorage.setItem('token', res.token);
-          } else {
-            sessionStorage.setItem('token', res.token);
+  
+          if (res.user) {
+            const userData = JSON.stringify(res.user);
+            if (keepSignedIn) {
+              localStorage.setItem('user', userData);
+            } else {
+              sessionStorage.setItem('user', userData);
+            }
           }
-
+  
+          this.errorMessage = '';
+          this.successMessage = res.message || 'Signed in successfully! 🎉';
           this.signinForm.reset();
+          this.captchaToken = null;
+  
           setTimeout(() => {
-            this.router.navigate(['/Ragister IPO Details And Dasboard']);
+            this.router.navigate(['/Ragister-IPO-Details-And-Dasboard']);
           }, 2000);
         },
         error: (err) => {
@@ -63,29 +103,9 @@ export class SigninComponent {
       this.signinForm.markAllAsTouched();
     }
   }
+  
 
-  // Google signup
   onGoogleSignin() {
-    const dummyGoogleUser = {
-      name: 'Google User',
-      email: 'googleuser@example.com',
-      googleId: 'FAKE_GOOGLE_ID',
-    };
-
-    this.authService.googleSignup(dummyGoogleUser).subscribe({
-      next: (res) => {
-        console.log('Google signup successful:', res);
-        this.errorMessage = '';
-        this.successMessage = res.message || 'Google signup successful! 🎉';
-        setTimeout(() => {
-          this.router.navigate(['/Sign In']);
-        }, 2000);
-      },
-      error: (err) => {
-        console.error('Google signup error:', err);
-        this.successMessage = '';
-        this.errorMessage = err.error?.message || 'Google signup failed!';
-      },
-    });
+    window.location.href = 'http://localhost:9000/OAuth/account/google/login';
   }
 }

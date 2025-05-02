@@ -30,7 +30,7 @@ export const routes: Route[] = [
   { path: 'Forget Password', component: ForgetPasswordComponent },
   { path: 'ipoInfo', component: IpoInfoComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'Ragister IPO Details And Dasboard', component: SidebarComponent },
+  { path: 'Ragister-IPO-Details-And-Dasboard', component: SidebarComponent },
   { path: 'PageNotFound', component: NotFoundComponent },
   { path: 'All Broker', component: CompThreeComponent },
   { path: 'Broker Compare - Web', component: BrokerCompareComponent },
