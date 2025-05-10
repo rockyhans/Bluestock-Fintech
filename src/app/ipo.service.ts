@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class IpoService {
-  private apiUrl = 'http://localhost:9000/ipo'; // Backend URL
+  private apiUrl = 'https://bluestock-backend-ppgk.onrender.com/ipo'; // Backend URL
 
   constructor(private http: HttpClient) {}
 

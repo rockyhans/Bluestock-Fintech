@@ -11,7 +11,7 @@ interface SigninRequest {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'http://localhost:9000';
+  private baseUrl = 'https://bluestock-backend-ppgk.onrender.com';
 
   constructor(private http: HttpClient) {}
 
