@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-app-home-page',
@@ -11,6 +13,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app-home-page.component.css',
 })
 export class AppHomePageComponent {
+
+  constructor(private router: Router) {}
+
   // learn-chart.component.ts
   learnItems = [
     'Technical, Fundamental',
@@ -47,13 +52,24 @@ export class AppHomePageComponent {
     },
   ];
 
+  goToPage() {
+    this.router.navigate(['/Broker Compare - Web']);
+  }
+  
+  
+
   brokers = [
-    { name: 'Angel One', logo: 'assets/angelone.png' },
-    { name: 'Zerodha', logo: 'assets/zerodha.png' },
-    { name: 'Upstox', logo: 'assets/upstox.png' },
-    { name: 'Groww', logo: 'assets/groww.png' },
+    { name: 'Angel One', logo: '../../assets/angel-removebg-preview.png' },
+    { name: 'Zerodha', logo: '../../assets/aaaa-removebg-preview.png' },
+    
+    // Add more brokers as needed
   ];
 
-  broker1 = 'Angel One';
-  broker2 = 'Zerodha';
+  broker1: string = '';
+  broker2: string = '';
+
+  getBrokerLogo(brokerName: string): string | undefined {
+    return this.brokers.find(b => b.name === brokerName)?.logo;
+  }
+
 }

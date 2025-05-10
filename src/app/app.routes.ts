@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { LargeCapComponent } from './large-cap/large-cap.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Route[] = [
   { path: '', component: AppHomePageComponent },

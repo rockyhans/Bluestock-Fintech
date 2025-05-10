@@ -102,7 +102,7 @@ export class SignupComponent {
   }
 
   onGoogleSignup() {
-    window.location.href = 'https://bluestockbackend.onrender.com/OAuth/account/google/signup';
+    window.location.href = 'http://localhost:9000/OAuth/account/google/signup';
   }
   
 }

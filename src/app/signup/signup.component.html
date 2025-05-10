@@ -12,7 +12,7 @@
   <!-- Success Message -->
   <div
     *ngIf="successMessage"
-    class="alert alert-success text-center position-fixed top-0 mt-2"
+    class="alert alert-success bg-white text-success text-center position-fixed top-0 mt-2   shadow border-0  border-start border-4 border-success fw-semibold p-3 "
   >
     {{ successMessage }}
   </div>
@@ -85,7 +85,7 @@
       >
         <re-captcha
           #recaptchaRef
-          [siteKey]="'6LcK4ysrAAAAAG7GH8R4zwmrkpLa7962CLfboQVU'"
+          [siteKey]="'6LdXwiwrAAAAAJGA8-vmsYLVy17lDv2DfIkf5j2T'"
           [size]="captchaSize"
           (resolved)="onCaptchaResolved($event)"
         >

@@ -70,6 +70,7 @@
                   type="file"
                   #fileInput
                   (change)="uploadLogo($event)"
+                  accept="image/*"
                   hidden
                 />
                 <button
@@ -105,7 +106,7 @@
                   title="jscd"
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.priceBand"
+                  [(ngModel)]="ipoDetails.prizeBand"
                 />
               </div>
 
@@ -113,9 +114,9 @@
                 <label>Open</label>
                 <input
                   title="jhkwe"
-                  type="text"
+                  type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.openDate"
+                  [(ngModel)]="ipoDetails.open"
                 />
               </div>
 
@@ -123,9 +124,9 @@
                 <label>Close</label>
                 <input
                   title="wkqjd"
-                  type="text"
+                  type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.closeDate"
+                  [(ngModel)]="ipoDetails.close"
                 />
               </div>
 
@@ -156,7 +157,7 @@
                 <label>Listing Date</label>
                 <input
                   title="lhe"
-                  type="text"
+                  type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
                   [(ngModel)]="ipoDetails.listingDate"
                 />
@@ -169,10 +170,9 @@
                   class="form-select p-3 bg-white shadow-none border-2"
                   [(ngModel)]="ipoDetails.status"
                 >
-                  <option value="">Select Status</option>
-                  <option value="Open">Open</option>
-                  <option value="Closed">Closed</option>
-                  <option value="Upcoming">Upcoming</option>
+                  <option value="Open">Ongoing</option>
+                  <option value="Closed">New Listed</option>
+                  <option value="Upcoming">Coming</option>
                 </select>
               </div>
             </div>
@@ -206,21 +206,21 @@
                 <label>Listing Gain</label>
                 <input
                   title="aslbcd"
-                  type="text"
+                  type="number"
                   class="form-control p-3 bg-white shadow-none border-2"
                   [(ngModel)]="ipoDetails.listingGain"
                 />
               </div>
 
-              <div class="col-md-6 d-flex flex-column gap-2">
+              <!-- <div class="col-md-6 d-flex flex-column gap-2">
                 <label>Listing Date</label>
                 <input
                   title="abskjc"
-                  type="text"
+                  type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
                   [(ngModel)]="ipoDetails.newListingDate"
                 />
-              </div>
+              </div> -->
 
               <div class="col-md-6 d-flex flex-column gap-2">
                 <label>CMP</label>
@@ -247,7 +247,7 @@
                 <input
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.rhpLink"
+                  [(ngModel)]="ipoDetails.rhp"
                   placeholder="Enter RHP PDF Link"
                 />
               </div>
@@ -257,7 +257,7 @@
                 <input
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.drhpLink"
+                  [(ngModel)]="ipoDetails.drhp"
                   placeholder="Enter DRHP PDF Link"
                 />
               </div>

@@ -7,15 +7,15 @@
 *ngIf="errorMessage"
 class="alert alert-danger text-center position-fixed top-0 mt-2"
 >
-{{ errorMessage }}
+{{ errorMessage }} 
 </div>
 
-<!-- Success Message -->
-<div
-*ngIf="successMessage"
-class="alert alert-success text-center position-fixed top-0 mt-2"
+ <!-- Success Message -->
+ <div
+ *ngIf="successMessage"
+ class="alert alert-success bg-white text-success text-center position-fixed top-0 mt-2   shadow border-0  border-start border-4 border-success fw-semibold p-3 "
 >
-{{ successMessage }}
+ {{ successMessage }}
 </div>
   <div class="p-4 divImpo">
     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
@@ -63,8 +63,10 @@ class="alert alert-success text-center position-fixed top-0 mt-2"
       <div
         class="p-1 mb-3 border border-dark rounded-4 d-flex justify-content-center bg-white w-100 shadow-none"
       >
+                <!-- [siteKey]="'6LdXwiwrAAAAAJGA8-vmsYLVy17lDv2DfIkf5j2T'" -->
+
         <re-captcha
-          [siteKey]="'6LcK4ysrAAAAAG7GH8R4zwmrkpLa7962CLfboQVU'"
+          [siteKey]="'6LevsDQrAAAAAP5ILhWOJFllYE8a6ETedtW3qDHO'"
           [size]="captchaSize"
           (resolved)="onCaptchaResolved($event)"
         ></re-captcha>

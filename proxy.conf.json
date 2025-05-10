@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://bluestockbackend.onrender.com",
+      "target": "http://localhost:9000",
       "secure": false
     }
   }

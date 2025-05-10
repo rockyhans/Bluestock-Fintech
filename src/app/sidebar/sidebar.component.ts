@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
     CommonModule,
     FormsModule,
     RouterModule,
-    DashboardComponent,
+    DashboardComponent, 
     IpoInfoComponent,
   ],
   templateUrl: './sidebar.component.html',

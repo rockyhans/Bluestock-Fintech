@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-
 <div class="py-4 splWidth">
   <!-- Home-Coponent 1  -->
   <div class="row align-items-center">
@@ -416,50 +415,54 @@
 
       <div class="d-flex gap-3 Imp">
         <!-- Broker 1 -->
-        <div
-          class="dropdown d-flex align-items-center rounded-3 bg-light bg-primary-subtle smallText p-2 p-md-0"
-        >
-          <img
-            src="../../assets/angel-removebg-preview.png"
-            class="ms-2 splImage"
-            alt="Angel One Logo"
-          />
+        <div class="dropdown d-flex flex-row align-items-center rounded-3 bg-light bg-primary-subtle smallText p-2 p-md-0">
+          <div class="d-flex align-items-center mb-2 " *ngIf="broker1">
+            <img
+              [src]="getBrokerLogo(broker1)"
+              alt="{{ broker1 }} Logo"
+              class="ms-2 splImage"
+            />
+          </div>
           <select
-            title="wdjqhio"
-            class="form-select border-0 bg-transparent fw-bold border-0 shadow-none smallText"
+            title="Select Broker 1"
+            class="form-select border-0 bg-transparent fw-bold shadow-none smallText"
             [(ngModel)]="broker1"
           >
+            <option value="" disabled selected>Select Broker 1</option>
             <option *ngFor="let broker of brokers" [value]="broker.name">
               {{ broker.name }}
             </option>
           </select>
         </div>
-
+      
         <!-- Broker 2 -->
-        <div
-          class="dropdown d-flex align-items-center rounded-3 bg-light bg-primary-subtle Imp"
-        >
-          <img
-            src="../../assets/aaaa-removebg-preview.png"
-            class="ms-2 splImage"
-            alt="Zerodha Logo"
-          />
+        <div class="dropdown d-flex flex-row align-items-center rounded-3 bg-light bg-primary-subtle smallText p-2 p-md-0">
+          <div class="d-flex align-items-center mb-2" *ngIf="broker2">
+            <img
+              [src]="getBrokerLogo(broker2)"
+              alt="{{ broker2 }} Logo"
+              class="ms-2 splImage"
+            />
+          </div>
           <select
-            title="kasjhigui"
-            class="form-select border-0 bg-transparent fw-bold border-0 shadow-none smallText"
+            title="Select Broker 2"
+            class="form-select border-0 bg-transparent fw-bold shadow-none smallText"
             [(ngModel)]="broker2"
           >
+            <option value="" disabled selected>Select Broker 2</option>
             <option *ngFor="let broker of brokers" [value]="broker.name">
               {{ broker.name }}
             </option>
           </select>
         </div>
       </div>
+      
+      
 
       <div
         class="mt-3 w-100 d-flex mt-md-5 align-items-center justify-content-evenly"
       >
-        <button class="btn btn-primary fw-semibold p-2 px-5">Compare</button>
+        <button class="btn btn-primary fw-semibold p-2 px-5" (click)="goToPage()" >Compare</button>
       </div>
     </div>
 

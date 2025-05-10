@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { RecaptchaModule, RecaptchaComponent } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-signin',
   standalone: true,
@@ -25,6 +25,7 @@ export class SigninComponent {
 
   constructor(
     private fb: FormBuilder,
+    private http: HttpClient,
     private authService: AuthService,
     private router: Router
   ) {
@@ -32,7 +33,6 @@ export class SigninComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       keepSignedIn: [false], // 👈 Add this line
-
     });
 
     this.setCaptchaSize();
@@ -61,18 +61,19 @@ export class SigninComponent {
         this.errorMessage = 'Please complete the reCAPTCHA.';
         return;
       }
-  
+
       const { email, password, keepSignedIn } = this.signinForm.value;
       const userData = {
         email,
         password,
         recaptchaToken: this.captchaToken,
       };
-  
+
       this.authService.signin(userData).subscribe({
         next: (res) => {
           console.log('Signin successful:', res);
-  
+          const token = localStorage.getItem('authToken');
+          console.log('Current token:', token);
           if (res.user) {
             const userData = JSON.stringify(res.user);
             if (keepSignedIn) {
@@ -81,12 +82,12 @@ export class SigninComponent {
               sessionStorage.setItem('user', userData);
             }
           }
-  
+
           this.errorMessage = '';
           this.successMessage = res.message || 'Signed in successfully! 🎉';
           this.signinForm.reset();
           this.captchaToken = null;
-  
+
           setTimeout(() => {
             this.router.navigate(['/Ragister-IPO-Details-And-Dasboard']);
           }, 2000);
@@ -103,9 +104,8 @@ export class SigninComponent {
       this.signinForm.markAllAsTouched();
     }
   }
-  
 
   onGoogleSignin() {
-    window.location.href = 'https://bluestockbackend.onrender.com/OAuth/account/google/login';
+    window.location.href = 'http://localhost:9000/OAuth/account/google/login';
   }
 }

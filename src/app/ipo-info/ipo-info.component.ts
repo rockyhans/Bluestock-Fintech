@@ -1,72 +1,96 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IpoService } from '../../ipo.service';
+import { FormsModule } from '@angular/forms';
+import { IpoService } from '../ipo.service'; // Import the IPO service
+
 @Component({
   selector: 'app-ipo-info',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule], // Include CommonModule and FormsModule
   templateUrl: './ipo-info.component.html',
-  styleUrl: './ipo-info.component.css',
+  styleUrls: ['./ipo-info.component.css'],
 })
 export class IpoInfoComponent {
-  ipoDetails = {
-    companyLogo: '',
-    companyName: 'XYZ Company',
-    priceBand: 'Not Issue',
-    openDate: 'Not Issued',
-    closeDate: 'Not Issued',
-    issueSize: '0000 Cr.',
-    issueType: 'XXX-Type',
-    listingDate: 'Not Issued',
-    status: 'XXX',
-    ipoPrice: 0,
-    listingPrice: 0,
-    listingGain: 'XXX%',
-    newListingDate: 'YYYY-MM-DD',
-    cmp: 0,
-    currentReturn: '0.00%',
-    rhpLink: 'xxx.xx',
-    drhpLink: 'xxx.xx',
+  ipoDetails: any = {
+    companyName: '',
+    prizeBand: '',
+    open: '',
+    close: '',
+    issueSize: '',
+    issueType: '',
+    listingDate: '',
+    status: 'Upcoming',
+    ipoPrice: '',
+    listingPrice: '',
+    listingGain: '',
+    cmp: '',
+    currentReturn: '',
+    rhp: '',
+    drhp: '',
+    companyLogo: null
   };
+
+  selectedComponent: string = 'ipoInfo';
+  selected: string = 'info';
+  ipoService = inject(IpoService); // Injecting the IPO service
+
+  register() {
+    if (this.ipoDetails.companyName && this.ipoDetails.prizeBand && this.ipoDetails.open) {
+      const formData = new FormData();
+      
+      // Append form data fields
+      formData.append('companyName', this.ipoDetails.companyName);
+      formData.append('priceBand', this.ipoDetails.prizeBand);
+      formData.append('open', this.ipoDetails.open);
+      formData.append('close', this.ipoDetails.close);
+      formData.append('issueSize', this.ipoDetails.issueSize);
+      formData.append('issueType', this.ipoDetails.issueType);
+      formData.append('listingDate', this.ipoDetails.listingDate);
+      formData.append('status', this.ipoDetails.status);
+      formData.append('ipoPrice', this.ipoDetails.ipoPrice);
+      formData.append('listingPrice', this.ipoDetails.listingPrice);
+      formData.append('listingGain', this.ipoDetails.listingGain);
+      formData.append('cmp', this.ipoDetails.cmp);
+      formData.append('currentReturn', this.ipoDetails.currentReturn);
+      formData.append('rhp', this.ipoDetails.rhp);
+      formData.append('drhp', this.ipoDetails.drhp);
+
+      // If logo is uploaded, append it to FormData
+      if (this.ipoDetails.companyLogo) {
+        formData.append('companyLogo', this.ipoDetails.companyLogo);
+      }
+
+      // Call the service to send data to backend
+      this.ipoService.registerIPO(formData).subscribe(
+        response => {
+          console.log('IPO Registered Successfully', response);
+        },
+        error => {
+          console.error('Error Registering IPO', error);
+        }
+      );
+    } else {
+      console.error('Please fill all required fields');
+    }
+  }
+
+  cancel() {
+    // Clear form or redirect based on your app's logic
+    console.log('Registration Cancelled');
+  }
+
+  select(component: string) {
+    this.selected = component;
+  }
 
   uploadLogo(event: any) {
     const file = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.ipoDetails.companyLogo = e.target.result;
-      };
-      reader.readAsDataURL(file);
+      this.ipoDetails.companyLogo = file;
     }
   }
 
   deleteLogo() {
-    this.ipoDetails.companyLogo = '';
-  }
-
-  register() {
-    console.log('Register IPO', this.ipoDetails);
-  }
-
-  cancel() {
-    console.log('Cancel action');
-  }
-
-  selected: string = 'info';
-
-  select(buttonType: string) {
-    this.selected = buttonType;
-  }
-
-  isInfoClicked = false;
-  isJournalClicked = false;
-
-  toggleInfoColor() {
-    this.isInfoClicked = !this.isInfoClicked;
-  }
-
-  toggleJournalColor() {
-    this.isJournalClicked = !this.isJournalClicked;
+    this.ipoDetails.companyLogo = null;
   }
 }
