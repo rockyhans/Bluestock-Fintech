@@ -42,13 +42,7 @@ Bluestock is a production-level frontend application built for Bluestock Fintech
 
 ## 🚀 Live Demo
 
-🔗 **Hosted App:** [https://your-domain.com](C:\Users\qumar\OneDrive\ドキュメント\IPO-Page.jpg) 
-
----
-
-## 🖼️ Preview
-
-![Bluestock Screenshot](C:\Users\qumar\OneDrive\Desktop\Preview-Image.png) 
+🔗 **Hosted App:** [[https://your-domain.com](https://Bluestock-Fintech.app/)]
 
 ---
 
@@ -59,13 +53,10 @@ bluestock-frontend/
 │ ├── app/
 │ │ ├── components/
 │ │ ├── services/
-│ │ ├── pages/
-│ │ └── app.module.ts
 │ ├── assets/
 │ │ ├── preview.png
-│ │ └── styles/
 │ └── index.html
-├── angular.json / package.json / etc.
+├── angular.json / package.json
 
 
 ---
@@ -73,38 +64,22 @@ bluestock-frontend/
 ## ⚙️ Getting Started
 
 ### 1. Clone the Repository
-
-
-git clone https://github.com/your-username/bluestock-frontend.git
+git clone [https://github.com/your-username/bluestock-frontend.git](https://github.com/rockyhans/Bluestock-Fintech)
 cd bluestock-frontend
-
-Install Dependencies
-bash
-Copy
-Edit
+  
+### 2. Install Dependencies
 npm install
 
-Run the App Locally
-bash
-Copy
-Edit
-npm start
-# or
-ng serve
+### 3. Run the App Locally
+npm start / ng serve
 
-🌍 Hosting Info
-The frontend is hosted on [Verce
+### 🌍 Hosting Info
+The frontend is hosted on Verce - [[https://your-domain.com](https://Bluestock-Fintech.app/)]
 
 👥 Contributors
-👤 Your Name – Frontend Developer
-
+👤 <h1 align="center" > Danish Rizwan </h1> – Frontend Developer
 💼 Bluestock Fintech Team
 
-
 📬 Contact
-For support, questions, or collaboration:
-📧 youremail@example.com
-
-
-
-
+For questions
+📧 rdanishrizwan@example.com
