@@ -1,8 +1,8 @@
+// environment.example.ts
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:9000',
-  googleSigninUrl: 'http://localhost:9000/OAuth/account/google/login',
-    googleSignupUrl: 'http://localhost:9000/OAuth/account/google/login',
-
-  recaptchaSiteKey: '6LdXwiwrAAAAAJGA8-vmsYLVy17lDv2DfIkf5j2T',
+  apiUrl: 'http://your-api-url.com',
+  googleSigninUrl: 'https://your-api-url.com/OAuth/account/google?state=login',
+  googleSignupUrl: 'https://your-api-url.com/OAuth/account/google?state=signup',
+  recaptchaSiteKey: 'YOUR_RECAPTCHA_SITE_KEY'
 };
