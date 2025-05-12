@@ -64,7 +64,7 @@ bluestock-frontend/
 ## ⚙️ Getting Started
 
 ### 1. Clone the Repository
-git clone [https://github.com/your-username/bluestock-frontend.git](https://github.com/rockyhans/Bluestock-Fintech)
+git clone [Reposetory](https://github.com/rockyhans/Bluestock-Fintech)
 cd bluestock-frontend
   
 ### 2. Install Dependencies
@@ -76,8 +76,8 @@ npm start / ng serve
 ### 🌍 Hosting Info
 The frontend is hosted on Verce - [[https://your-domain.com](https://Bluestock-Fintech.app/)]
 
-👥 Contributors
-👤 <h1 align="center" > Danish Rizwan </h1> – Frontend Developer
+### 👥 Contributors
+👤 <h3 align="center" > Danish Rizwan </h3> – Frontend Developer
 💼 Bluestock Fintech Team
 
 📬 Contact
