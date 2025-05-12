@@ -64,21 +64,28 @@ bluestock-frontend/
 │ │ ├── components/
 │ │ ├── services/
 │ ├── assets/
-│ │ ├── preview.png
+│ │ ├── Github-Images/
+│ │ │ └── Preview-Image.png
 │ └── index.html
-├── angular.json / package.json
+├── angular.json
+├── package.json
+
+---
 
 
 ---
 
 ## ⚙️ Getting Started
 
-### 1. Clone the Repository
-git clone [Reposetory](https://github.com/rockyhans/Bluestock-Fintech)
-<br>
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/rockyhans/Bluestock-Fintech.git
 cd bluestock-frontend
+
   
-### 2. Install Dependencies
+2️⃣ Install Dependencies
+
 npm install
 
 ### 3. Run the App Locally
