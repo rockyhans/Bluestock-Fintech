@@ -57,7 +57,7 @@ This app powers both our platform and client dashboards with structured IPO insi
 ---
 
 ## 📁 Project Structure
-
+```bash
 bluestock-frontend/
 ├── src/
 │ ├── app/
@@ -69,7 +69,7 @@ bluestock-frontend/
 │ └── index.html
 ├── angular.json
 ├── package.json
-
+```
 ---
 
 
@@ -81,6 +81,8 @@ bluestock-frontend/
 
 ```bash
 git clone https://github.com/rockyhans/Bluestock-Fintech.git
+```
+```bash
 cd bluestock-frontend
 ```
 
@@ -106,6 +108,7 @@ The frontend is hosted on Vercel
 
 📬 Contact
 📧 Email: rdanishrizwan@example.com
+<br>
 💼 Team: Bluestock Fintech
 
 
