@@ -82,22 +82,30 @@ bluestock-frontend/
 ```bash
 git clone https://github.com/rockyhans/Bluestock-Fintech.git
 cd bluestock-frontend
+```
 
   
 2️⃣ Install Dependencies
-
+```bash 
 npm install
+```
 
-### 3. Run the App Locally
-npm start / ng serve
+3️⃣ Run Locally
+```bash
+ng serve
+```
+App will be running at: http://localhost:4200
+
 
 ### 🌍 Hosting Info
-The frontend is hosted on Verce - [[ Bluestock Fintech - IPO Web Application](https://Bluestock-Fintech.app/)]
+The frontend is hosted on Vercel
+- [[ Bluestock Fintech - IPO Web Application](https://Bluestock-Fintech.app/)]
 
-### 👥 Contributors
-👤 <h2> Danish Rizwan </h2> – Frontend Developer
-💼 Bluestock Fintech Team
+👤 Contributors
+<table> <tr> <td align="center"> <img src="https://avatars.githubusercontent.com/u/your-avatar" width="80px;" alt="Danish Rizwan"/> <br /><sub><b>Danish Rizwan</b></sub><br /> <sub>Frontend Developer</sub> </td> </tr> </table>
 
 📬 Contact
-For questions
-📧 rdanishrizwan@example.com
+📧 Email: rdanishrizwan@example.com
+💼 Team: Bluestock Fintech
+
+
