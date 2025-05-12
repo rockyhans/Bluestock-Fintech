@@ -1,27 +1,105 @@
-# MyFirstProject
+![image](https://github.com/user-attachments/assets/d315981f-4297-460c-800b-3958b67aff6f)![image](https://github.com/user-attachments/assets/60dfd738-661e-4201-96a3-405f239afb55)# 📄 Bluestock – IPO Rating & Tracking Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.16.
+![Bluestock Preview]("C:\Users\qumar\OneDrive\Desktop\Preview-Image.png")
+Bluestock is a production-level frontend application built for Bluestock Fintech. It displays real-time IPO data in a clean, intuitive interface, helping users and investors evaluate and track public offerings. Designed for both our platform and client integrations, this app provides rich IPO insights in a structured and responsive layout.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌟 Features
 
-## Code scaffolding
+- 📊 **Detailed IPO Listings**  
+  Company logo, name, price band, issue type and size, opening/closing/listing dates, IPO status, listing gains, and more.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 📈 **Real-Time Market Metrics**  
+  Includes IPO price, listing price, current market price (CMP), and calculated returns.
 
-## Build
+- 📎 **Downloadable Documents**  
+  Access and download RHP and DRHP PDFs for detailed company filings.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 💻 **Responsive UI**  
+  Optimized for both desktop and mobile devices.
 
-## Running unit tests
+- 🌐 **Public & Client-Side Integration**  
+  Easily embeddable into external platforms and apps.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠️ Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> This repository includes **only the frontend** implementation.
 
-## Further help
+- **Framework:** Angular / React (update based on your actual framework)
+- **Styling:** Bootstrap / Tailwind / SCSS (as applicable)
+- **Icons & Assets:** FontAwesome / Custom SVGs
+- **API:** Connects to Bluestock REST API for IPO data
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🚀 Live Demo
+
+🔗 **Hosted App:** [https://your-domain.com](C:\Users\qumar\OneDrive\ドキュメント\IPO-Page.jpg) 
+
+---
+
+## 🖼️ Preview
+
+![Bluestock Screenshot](C:\Users\qumar\OneDrive\Desktop\Preview-Image.png) 
+
+---
+
+## 📁 Project Structure (Frontend Only)
+
+bluestock-frontend/
+├── src/
+│ ├── app/
+│ │ ├── components/
+│ │ ├── services/
+│ │ ├── pages/
+│ │ └── app.module.ts
+│ ├── assets/
+│ │ ├── preview.png
+│ │ └── styles/
+│ └── index.html
+├── angular.json / package.json / etc.
+
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+
+git clone https://github.com/your-username/bluestock-frontend.git
+cd bluestock-frontend
+
+Install Dependencies
+bash
+Copy
+Edit
+npm install
+
+Run the App Locally
+bash
+Copy
+Edit
+npm start
+# or
+ng serve
+
+🌍 Hosting Info
+The frontend is hosted on [Verce
+
+👥 Contributors
+👤 Your Name – Frontend Developer
+
+💼 Bluestock Fintech Team
+
+
+📬 Contact
+For support, questions, or collaboration:
+📧 youremail@example.com
+
+
+
+
