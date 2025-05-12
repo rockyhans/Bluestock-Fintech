@@ -1,52 +1,62 @@
-<h1 align="center">Bluestock Fintech</h1>
+<h1 align="center" style="color:#2c3e50;">💹 Bluestock Fintech</h1>
 
-![Bluestock Preview](./src/assets/Github-Images/Preview-Image.png)
+<p align="center">
+  <img src="./src/assets/Github-Images/Preview-Image.png" alt="Bluestock Preview" width="600"/>
+</p>
 
-Bluestock is a production-level frontend application built for Bluestock Fintech. It displays real-time IPO data in a clean, intuitive interface, helping users and investors evaluate and track public offerings. Designed for both our platform and client integrations, this app provides rich IPO insights in a structured and responsive layout.
+<p align="center">
+  <b>A sleek, production-ready frontend for Bluestock's IPO analytics platform.</b><br>
+  Built with Angular & Bootstrap, this app offers real-time IPO insights, tracking, and document access.
+</p>
 
-![image](https://github.com/user-attachments/assets/d315981f-4297-460c-800b-3958b67aff6f)
-📄 Bluestock – IPO web application 
+---
 
+## 📄 About the Project
+
+Bluestock is a production-level frontend application built for Bluestock Fintech.  
+It displays IPO data in a clean, responsive interface — helping investors track public offerings.  
+This app powers both our platform and client dashboards with structured IPO insights.
 
 ---
 
 ## 🌟 Features
 
 - 📊 **Detailed IPO Listings**  
-  Company logo, name, price band, issue type and size, opening/closing/listing dates, IPO status, listing gains, and more.
+  Company logo, name, price band, issue type and size, key dates, listing gains & status.
 
-- 📈 **Real-Time Market Metrics**  
-  Includes IPO price, listing price, current market price (CMP), and calculated returns.
+- 📈 **Live Market Metrics**  
+  IPO price, listing price, current CMP, and auto-calculated returns.
 
 - 📎 **Downloadable Documents**  
-  Access and download RHP and DRHP PDFs for detailed company filings.
+  Instant access to RHP and DRHP PDFs for every IPO.
 
 - 💻 **Responsive UI**  
-  Optimized for both desktop and mobile devices.
+  Fully optimized for both desktop and mobile screens.
 
-- 🌐 **Public & Client-Side Integration**  
-  Easily embeddable into external platforms and apps.
+- 🌐 **Easy Embeds for Clients**  
+  Designed for integration into third-party apps and platforms.
 
 ---
 
 ## 🛠️ Tech Stack
 
-> This repository includes **only the frontend** implementation.
+> This repository contains the **frontend only**.
 
-- **Framework:** Angular
-- **Styling:** Bootstrap
-- **Icons & Assets:** Bootstrap Font
-- **API:** Connects to Bluestock REST API for IPO data
+- 🎯 **Framework:** Angular (standalone components)
+- 🎨 **Styling:** Bootstrap 5
+- 🧩 **Icons & Assets:** Bootstrap Icons, Custom Assets
+- 🔗 **API:** Connected to Bluestock’s secure REST API
 
 ---
 
 ## 🚀 Live Demo
 
-🔗 **Hosted App:** [[rockyhans - Bluestock-Fintech](https://Bluestock-Fintech.app/)]
+🌐 **App Link:**  
+[🔗 Bluestock-Fintech.app](https://Bluestock-Fintech.app/)
 
 ---
 
-## 📁 Project Structure (Frontend Only)
+## 📁 Project Structure
 
 bluestock-frontend/
 ├── src/
