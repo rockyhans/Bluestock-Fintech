@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/d315981f-4297-460c-800b-3958b67aff6f)
 📄 Bluestock – IPO web application 
 
-![Bluestock Preview](https://github.com/user-attachments/assets/Github-Images/Preview-Image.png)
+![Bluestock Preview](./src/assets/Github-Images/Preview-Image.png)
 Bluestock is a production-level frontend application built for Bluestock Fintech. It displays real-time IPO data in a clean, intuitive interface, helping users and investors evaluate and track public offerings. Designed for both our platform and client integrations, this app provides rich IPO insights in a structured and responsive layout.
 
 ---
