@@ -65,6 +65,7 @@ bluestock-frontend/
 
 ### 1. Clone the Repository
 git clone [Reposetory](https://github.com/rockyhans/Bluestock-Fintech)
+<br>
 cd bluestock-frontend
   
 ### 2. Install Dependencies
