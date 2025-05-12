@@ -42,7 +42,7 @@ Bluestock is a production-level frontend application built for Bluestock Fintech
 
 ## 🚀 Live Demo
 
-🔗 **Hosted App:** [[https://your-domain.com](https://Bluestock-Fintech.app/)]
+🔗 **Hosted App:** [[rockyhans - Bluestock-Fintech](https://Bluestock-Fintech.app/)]
 
 ---
 
@@ -74,10 +74,10 @@ npm install
 npm start / ng serve
 
 ### 🌍 Hosting Info
-The frontend is hosted on Verce - [[https://your-domain.com](https://Bluestock-Fintech.app/)]
+The frontend is hosted on Verce - [[ Bluestock Fintech - IPO Web Application](https://Bluestock-Fintech.app/)]
 
 ### 👥 Contributors
-👤 <h3 align="center" > Danish Rizwan </h3> – Frontend Developer
+👤 <h2> Danish Rizwan </h2> – Frontend Developer
 💼 Bluestock Fintech Team
 
 📬 Contact
