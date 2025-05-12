@@ -52,7 +52,7 @@ This app powers both our platform and client dashboards with structured IPO insi
 ## 🚀 Live Demo
 
 🌐 **App Link:**  
-[🔗 Bluestock-Fintech.app](https://Bluestock-Fintech.app/)
+[🔗 Bluestock-Fintech.app](https://bluestock-fintech-phi.vercel.app/)
 
 ---
 
@@ -98,7 +98,7 @@ App will be running at: http://localhost:4200
 
 ### 🌍 Hosting Info
 The frontend is hosted on Vercel
-- [[ Bluestock Fintech - IPO Web Application](https://Bluestock-Fintech.app/)]
+- [[ Bluestock Fintech - IPO Web Application](https://bluestock-fintech-phi.vercel.app/)]
 
 👤 Contributors
 <table> <tr> <td align="center"> <img src="https://avatars.githubusercontent.com/u/164065390?v=4" width="80px;" alt="Danish Rizwan"/> <br /><sub><b>Danish Rizwan</b></sub><br /> <sub>Frontend Developer</sub> </td> </tr> </table>
