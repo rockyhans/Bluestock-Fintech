@@ -23,7 +23,7 @@ export class MainPageComponent implements OnInit {
 
   ipoList = [
     {
-      logo: '../../assets/logo_min.png',
+      logo: '../../assets/logo/logo_min.png',
       company: 'XYZ Company Ltd.',
       priceBand: 'Rs 00 - 00',
       open: 'YYYY-MM-DD',
@@ -33,7 +33,7 @@ export class MainPageComponent implements OnInit {
       listingDate: 'YYYY-MM-DD',
     },
     {
-      logo: '../../assets/logo_min.png',
+      logo: '../../assets/logo/logo_min.png',
       company: 'XYZ Company Ltd.',
       priceBand: 'Rs 00 - 00',
       open: 'YYYY-MM-DD',
@@ -43,7 +43,7 @@ export class MainPageComponent implements OnInit {
       listingDate: 'YYYY-MM-DD',
     },
     {
-      logo: '../../assets/logo_min.png',
+      logo: '../../assets/logo/logo_min.png',
       company: 'XYZ Company Ltd.',
       priceBand: 'Rs 00 - 00',
       open: 'YYYY-MM-DD',
