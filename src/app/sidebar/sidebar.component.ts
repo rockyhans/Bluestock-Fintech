@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { IpoInfoComponent } from '../ipo-info/ipo-info.component';
-import { AuthService } from '../auth.service';
+import { ViewAllIpoComponent } from '../view-all-ipo/view-all-ipo.component';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,8 +14,9 @@ import { AuthService } from '../auth.service';
     CommonModule,
     FormsModule,
     RouterModule,
-    DashboardComponent, 
+    DashboardComponent,
     IpoInfoComponent,
+    ViewAllIpoComponent,
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
@@ -46,7 +48,6 @@ export class SidebarComponent {
 
   userName: string = '';
   userInitial: string = '';
-
 
   ngOnInit() {
     const user = this.authService.getUser();

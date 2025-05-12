@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { RecaptchaModule, RecaptchaComponent } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { AuthService } from '../Service/auth.service';
+
 @Component({
   selector: 'app-signin',
   standalone: true,
@@ -14,6 +16,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent {
+  captchaSiteKey = environment.recaptchaSiteKey;
+
   signinForm: FormGroup;
   showPassword = false;
   errorMessage: string = '';
@@ -21,7 +25,7 @@ export class SigninComponent {
   screenWidth: number = window.innerWidth;
   captchaSize: 'normal' | 'compact' = 'normal';
 
-  captchaToken: string | null = null; // 👈 store reCAPTCHA token
+  captchaToken: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -32,7 +36,7 @@ export class SigninComponent {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      keepSignedIn: [false], // 👈 Add this line
+      keepSignedIn: [false],
     });
 
     this.setCaptchaSize();
@@ -50,7 +54,6 @@ export class SigninComponent {
     this.captchaSize = this.screenWidth < 500 ? 'compact' : 'normal';
   }
 
-  // 👇 Capture reCAPTCHA token
   onCaptchaResolved(token: string | null) {
     this.captchaToken = token;
   }
@@ -72,8 +75,7 @@ export class SigninComponent {
       this.authService.signin(userData).subscribe({
         next: (res) => {
           console.log('Signin successful:', res);
-          const token = localStorage.getItem('authToken');
-          console.log('Current token:', token);
+          console.log('Document.cookie after signin:', document.cookie);
           if (res.user) {
             const userData = JSON.stringify(res.user);
             if (keepSignedIn) {
@@ -106,6 +108,6 @@ export class SigninComponent {
   }
 
   onGoogleSignin() {
-    window.location.href = 'http://localhost:9000/OAuth/account/google/login';
+    window.location.href = environment.googleSigninUrl;
   }
 }

@@ -12,7 +12,7 @@ export class CompThreeComponent {
   brokerList: BrokerCard[] = [
     {
       name: 'Zerodha',
-      logo: '../../assets/aaaa-removebg-preview.png',
+      logo: '../../assets/Broker-Apps/aaaa-removebg-preview.png',
       bgColor: '#e8f0ff',
       reviews: '15K ',
       accounts: '50.2K',
@@ -27,7 +27,7 @@ export class CompThreeComponent {
     },
     {
       name: 'AngelOne',
-      logo: '../../assets/angel-removebg-preview.png',
+      logo: '../../assets/Broker-Apps/angel-removebg-preview.png',
       bgColor: '#fff2d6',
       reviews: '15K',
       accounts: '50.2K',

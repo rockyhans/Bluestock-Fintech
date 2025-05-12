@@ -1,29 +1,6 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-main-page',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './main-page.component.html',
-//   styleUrl: './main-page.component.css'
-// })
-// export class MainPageComponent {
-
-// }
-
-// import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-
-// @Component({
-//   selector: 'app-main-page',
-//   standalone: true,
-//   imports: [CommonModule], // <-- Add this line
-//   templateUrl: './main-page.component.html',
-// })
-// export class MainPageComponent {}
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IpoService, Ipo } from '../Service/ipo.service';
 
 @Component({
   selector: 'app-main-page',
@@ -32,7 +9,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
+  ipoList1: Ipo[] = [];
+
+  constructor(private ipoService: IpoService) {}
+
+  ngOnInit(): void {
+    this.ipoService.getIpos().subscribe({
+      next: (data) => (this.ipoList1 = data),
+      error: (err) => console.error('Error fetching IPOs:', err),
+    });
+  }
+
   ipoList = [
     {
       logo: '../../assets/logo_min.png',

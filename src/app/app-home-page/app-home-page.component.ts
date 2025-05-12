@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-app-home-page',
   standalone: true,
@@ -13,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrl: './app-home-page.component.css',
 })
 export class AppHomePageComponent {
-
   constructor(private router: Router) {}
 
   // learn-chart.component.ts
@@ -55,13 +53,11 @@ export class AppHomePageComponent {
   goToPage() {
     this.router.navigate(['/Broker Compare - Web']);
   }
-  
-  
 
   brokers = [
     { name: 'Angel One', logo: '../../assets/angel-removebg-preview.png' },
     { name: 'Zerodha', logo: '../../assets/aaaa-removebg-preview.png' },
-    
+
     // Add more brokers as needed
   ];
 
@@ -69,7 +65,6 @@ export class AppHomePageComponent {
   broker2: string = '';
 
   getBrokerLogo(brokerName: string): string | undefined {
-    return this.brokers.find(b => b.name === brokerName)?.logo;
+    return this.brokers.find((b) => b.name === brokerName)?.logo;
   }
-
 }

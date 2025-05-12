@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://bluestock-backend-ppgk.onrender.com",
+      "target": "backend.url",
       "secure": false
     }
   }

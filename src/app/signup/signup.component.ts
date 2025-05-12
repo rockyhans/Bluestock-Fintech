@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { environment } from '../../environments/environment';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,6 +15,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
+  captchaSiteKey = environment.recaptchaSiteKey;
+
   signupForm: FormGroup;
   showPassword = false;
   errorMessage: string = '';
@@ -35,7 +38,6 @@ export class SignupComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
     this.setCaptchaSize();
-    
   }
 
   ngOnInit() {
@@ -56,8 +58,6 @@ export class SignupComponent {
   onCaptchaResolved(token: string | null) {
     this.captchaToken = token;
   }
-
-  
 
   onSignup() {
     if (this.signupForm.valid) {
@@ -102,7 +102,6 @@ export class SignupComponent {
   }
 
   onGoogleSignup() {
-    window.location.href = 'http://localhost:9000/OAuth/account/google/signup';
+    window.location.href = environment.googleSignupUrl;
   }
-  
 }

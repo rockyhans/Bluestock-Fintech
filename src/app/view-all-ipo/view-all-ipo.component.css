@@ -1,0 +1,9 @@
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.highlight-row {
+  background-color: #0d6efd !important; /* Bootstrap primary blue */
+  color: white !important;
+}

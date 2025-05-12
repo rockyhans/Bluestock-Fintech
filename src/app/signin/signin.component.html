@@ -1,25 +1,24 @@
 <div
   class="container d-flex align-items-center justify-content-center min-vh-100"
 >
+  <!-- Error Message -->
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-danger text-center position-fixed top-0 mt-2"
+  >
+    {{ errorMessage }}
+  </div>
 
-<!-- Error Message -->
-<div
-*ngIf="errorMessage"
-class="alert alert-danger text-center position-fixed top-0 mt-2"
->
-{{ errorMessage }} 
-</div>
-
- <!-- Success Message -->
- <div
- *ngIf="successMessage"
- class="alert alert-success bg-white text-success text-center position-fixed top-0 mt-2   shadow border-0  border-start border-4 border-success fw-semibold p-3 "
->
- {{ successMessage }}
-</div>
+  <!-- Success Message -->
+  <div
+    *ngIf="successMessage"
+    class="alert alert-success bg-white text-success text-center position-fixed top-0 mt-2 shadow border-0 border-start border-4 border-success fw-semibold p-3"
+  >
+    {{ successMessage }}
+  </div>
   <div class="p-4 divImpo">
     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
-      <img src="../../assets/logo.png" alt="logo" class="logoImg" />
+      <img src="../../assets/logo/logo.png" alt="logo" class="logoImg" />
       <h1 class="pt-2 fw-bold">BLUESTOCK</h1>
     </a>
 
@@ -63,27 +62,14 @@ class="alert alert-danger text-center position-fixed top-0 mt-2"
       <div
         class="p-1 mb-3 border border-dark rounded-4 d-flex justify-content-center bg-white w-100 shadow-none"
       >
-                <!-- [siteKey]="'6LdXwiwrAAAAAJGA8-vmsYLVy17lDv2DfIkf5j2T'" -->
-
         <re-captcha
-          [siteKey]="'6LevsDQrAAAAAP5ILhWOJFllYE8a6ETedtW3qDHO'"
+          [siteKey]="captchaSiteKey"
           [size]="captchaSize"
           (resolved)="onCaptchaResolved($event)"
         ></re-captcha>
       </div>
 
       <!-- Keep me signed in -->
-      <!-- <div class="form-check mb-3 checkboxDiv w-100">
-        <input
-          type="checkbox"
-          class="form-check-input shadow-none"
-          id="keepSigned"
-          formControlName="keepSignedIn"
-        />
-        <label class="form-check-label" for="keepSigned"
-          >Keep me signed in</label
-        >
-      </div> -->
 
       <div class="form-check mb-3 checkboxDiv w-100">
         <input
@@ -96,7 +82,6 @@ class="alert alert-danger text-center position-fixed top-0 mt-2"
           Keep me signed in
         </label>
       </div>
-      
 
       <!-- Login Button -->
       <button type="submit" class="btn btn-primary w-100">Login</button>

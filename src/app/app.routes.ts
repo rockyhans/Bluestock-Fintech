@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { MyComponentComponent } from './my-component/my-component.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -7,25 +6,25 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { IpoInfoComponent } from './ipo-info/ipo-info.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './Small-Coponents/not-found/not-found.component';
 import { CompThreeComponent } from './comp-three/comp-three.component';
 import { BrokerCompareComponent } from './broker-compare/broker-compare.component';
-import { SharkInvestorsComponent } from './shark-investors/shark-investors.component';
+import { SharkInvestorsComponent } from './Small-Coponents/shark-investors/shark-investors.component';
 import { AppHomePageComponent } from './app-home-page/app-home-page.component';
 import { CommunityComponent } from './community/community.component';
 import { SectorComponent } from './sector/sector.component';
-import { CareerComponent } from './career/career.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProductComponent } from './product/product.component';
-import { BlogsComponent } from './blogs/blogs.component';
-import { LargeCapComponent } from './large-cap/large-cap.component';
-import { authGuard } from './auth.guard';
+import { CareerComponent } from './Small-Coponents/career/career.component';
+import { AboutComponent } from './Small-Coponents/about/about.component';
+import { ContactComponent } from './Small-Coponents/contact/contact.component';
+import { ProductComponent } from './Small-Coponents/product/product.component';
+import { BlogsComponent } from './Small-Coponents/blogs/blogs.component';
+import { LargeCapComponent } from './Small-Coponents/large-cap/large-cap.component';
+import { ViewAllIpoComponent } from './view-all-ipo/view-all-ipo.component';
 
 export const routes: Route[] = [
   { path: '', component: AppHomePageComponent },
   { path: 'Upcoming IPO - View All', component: HomeComponent },
-  { path: 'IPO Upcoming Screen', component: MyComponentComponent },
+  { path: 'IPO Upcoming Screen', component: ViewAllIpoComponent },
   { path: 'Sign In', component: SigninComponent },
   { path: 'Sign Up', component: SignupComponent },
   { path: 'Forget Password', component: ForgetPasswordComponent },

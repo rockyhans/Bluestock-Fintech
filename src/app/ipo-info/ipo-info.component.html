@@ -60,11 +60,11 @@
               >
                 <img
                   alt="dje"
-                  *ngIf="ipoDetails.companyLogo"
-                  [src]="ipoDetails.companyLogo"
+                  *ngIf="credentials.companyLogo"
+                  [src]="credentials.companyLogo"
                   class="img-thumbnail border-0 rounded-circle companyLogoImage"
                 />
-                <p *ngIf="!ipoDetails.companyLogo" class="text-muted"></p>
+                <p *ngIf="!credentials.companyLogo" class="text-muted"></p>
 
                 <input
                   type="file"
@@ -96,7 +96,7 @@
                   title="kjds"
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.companyName"
+                  [(ngModel)]="credentials.companyName"
                 />
               </div>
 
@@ -106,7 +106,7 @@
                   title="jscd"
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.prizeBand"
+                  [(ngModel)]="credentials.prizeBand"
                 />
               </div>
 
@@ -116,7 +116,7 @@
                   title="jhkwe"
                   type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.open"
+                  [(ngModel)]="credentials.open"
                 />
               </div>
 
@@ -126,7 +126,7 @@
                   title="wkqjd"
                   type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.close"
+                  [(ngModel)]="credentials.close"
                 />
               </div>
 
@@ -136,7 +136,7 @@
                   title="wkj"
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.issueSize"
+                  [(ngModel)]="credentials.issueSize"
                 />
               </div>
 
@@ -145,7 +145,7 @@
                 <select
                   title="dasjk"
                   class="form-select p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.issueType"
+                  [(ngModel)]="credentials.issueType"
                 >
                   <option value="">Select Type</option>
                   <option value="Fresh Issue">Fresh Issue</option>
@@ -159,7 +159,7 @@
                   title="lhe"
                   type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.listingDate"
+                  [(ngModel)]="credentials.listingDate"
                 />
               </div>
 
@@ -168,7 +168,7 @@
                 <select
                   title="jjsho"
                   class="form-select p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.status"
+                  [(ngModel)]="credentials.status"
                 >
                   <option value="Open">Ongoing</option>
                   <option value="Closed">New Listed</option>
@@ -188,7 +188,7 @@
                   title="bjask"
                   type="number"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.ipoPrice"
+                  [(ngModel)]="credentials.ipoPrice"
                 />
               </div>
 
@@ -198,7 +198,7 @@
                   title="slk"
                   type="number"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.listingPrice"
+                  [(ngModel)]="credentials.listingPrice"
                 />
               </div>
 
@@ -208,19 +208,19 @@
                   title="aslbcd"
                   type="number"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.listingGain"
+                  [(ngModel)]="credentials.listingGain"
                 />
               </div>
 
-              <!-- <div class="col-md-6 d-flex flex-column gap-2">
+              <div class="col-md-6 d-flex flex-column gap-2">
                 <label>Listing Date</label>
                 <input
                   title="abskjc"
                   type="date"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.newListingDate"
+                  [(ngModel)]="credentials.newListingDate"
                 />
-              </div> -->
+              </div>
 
               <div class="col-md-6 d-flex flex-column gap-2">
                 <label>CMP</label>
@@ -228,7 +228,7 @@
                   title="ask"
                   type="number"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.cmp"
+                  [(ngModel)]="credentials.cmp"
                 />
               </div>
 
@@ -238,7 +238,7 @@
                   title="lschi"
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.currentReturn"
+                  [(ngModel)]="credentials.currentReturn"
                 />
               </div>
 
@@ -247,7 +247,7 @@
                 <input
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.rhp"
+                  [(ngModel)]="credentials.rhp"
                   placeholder="Enter RHP PDF Link"
                 />
               </div>
@@ -257,7 +257,7 @@
                 <input
                   type="text"
                   class="form-control p-3 bg-white shadow-none border-2"
-                  [(ngModel)]="ipoDetails.drhp"
+                  [(ngModel)]="credentials.drhp"
                   placeholder="Enter DRHP PDF Link"
                 />
               </div>

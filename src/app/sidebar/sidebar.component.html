@@ -32,10 +32,9 @@
         <div
           class="rounded-circle text-white fw-bold d-flex align-items-center justify-content-center userLogo"
         >
-        {{ userInitial || 'U' }}
-
+          {{ userInitial || "U" }}
         </div>
-        <span class="fw-semibold" *ngIf="userName" >Hii, {{ userName }}</span>
+        <span class="fw-semibold" *ngIf="userName">Hii, {{ userName }}</span>
         <i class="bi bi-chevron-down ms-3"></i>
       </div>
 
@@ -68,10 +67,12 @@
         <button
           class="nav-link fw-semibold p-3 border-0 w-100 text-start"
           [ngClass]="{
-            'active text-primary': selectedComponent === 'ipoInfo',
-            'bg-transparent text-muted': selectedComponent !== 'ipoInfo'
+            'active text-primary':
+              selectedComponent === 'Upcoming IPO - View All',
+            'bg-transparent text-muted':
+              selectedComponent !== 'Upcoming IPO - View All'
           }"
-          (click)="selectedComponent = 'ipoInfo'"
+          (click)="selectedComponent = 'Upcoming IPO - View All'"
         >
           <i class="bi bi-speedometer2 me-2"></i>Manage IPO
         </button>
@@ -129,6 +130,17 @@
     </ul>
   </div>
 
-  <app-dashboard class="normal" *ngIf="selectedComponent === 'dashboard'"></app-dashboard>
-  <app-ipo-info class="normal" *ngIf="selectedComponent === 'ipoInfo'"></app-ipo-info>
+  <app-dashboard
+    class="normal"
+    *ngIf="selectedComponent === 'dashboard'"
+  ></app-dashboard>
+  <app-view-all-ipo
+    class="normal"
+    *ngIf="selectedComponent === 'Upcoming IPO - View All'"
+    (selectedComponentChange)="selectedComponent = $event"
+  ></app-view-all-ipo>
+  <app-ipo-info
+    class="normal"
+    *ngIf="selectedComponent === 'ipoInfo'"
+  ></app-ipo-info>
 </div>
