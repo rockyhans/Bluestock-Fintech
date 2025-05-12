@@ -33,9 +33,9 @@ Bluestock is a production-level frontend application built for Bluestock Fintech
 
 > This repository includes **only the frontend** implementation.
 
-- **Framework:** Angular / React (update based on your actual framework)
-- **Styling:** Bootstrap / Tailwind / SCSS (as applicable)
-- **Icons & Assets:** FontAwesome / Custom SVGs
+- **Framework:** Angular
+- **Styling:** Bootstrap
+- **Icons & Assets:** Bootstrap Font
 - **API:** Connects to Bluestock REST API for IPO data
 
 ---
